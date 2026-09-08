@@ -1,0 +1,11 @@
+# Segredos (DA-10)
+.env
+.env.test
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+# Sistema
+.DS_Store
