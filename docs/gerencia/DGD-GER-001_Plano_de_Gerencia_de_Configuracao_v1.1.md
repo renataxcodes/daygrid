@@ -11,7 +11,7 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 | ID do IC | DGD-GER-001 |
 | Título | Plano de Gerência de Configuração (PGC) |
 | Projeto | DayGrid — lista de afazeres diária |
-| Versão | 1.0 (aprovada — baseline BL-PLAN) |
+| Versão | 1.1 (aprovada — baseline BL-PLAN, alterada pela SM-001) |
 | Autor | Equipe DayGrid |
 | Aprovação | CCB do projeto — ATA-002, 18/11/2026 |
 | Norma de referência | IEEE 828 — Configuration Management in Systems and Software Engineering |
@@ -20,6 +20,7 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.1 | 18/11/2026 | Equipe DayGrid | SM-001 (ATA-003): nova baseline BL-PROJ na seção 7; BL-IMPL passa a incluir as versões vigentes dos documentos técnicos |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-002); entra na baseline BL-PLAN |
 | 0.3 | 18/11/2026 | Equipe DayGrid | Horário do relatório semanal alinhado à ERS v0.5 (domingo às 23h59) |
 | 0.2 | 18/11/2026 | Equipe DayGrid | Papéis e stack confirmados pela equipe; etiquetas passam a ser personalizáveis |
@@ -188,13 +189,14 @@ Toda baseline e toda release recebem uma tag anotada em `main`, com o mesmo nome
 
 ## 7. Baselines planejadas
 
-Quatro baselines levam o projeto até a entrega de 25/11/2026. O cronograma é curto (7 dias), por isso cada baseline depende da aprovação da anterior.
+Cinco baselines levam o projeto até a entrega de 25/11/2026. O cronograma é curto (7 dias), por isso cada baseline depende da aprovação da anterior. A BL-PROJ foi incluída pela SM-001 (ATA-003) para congelar os documentos técnicos antes do código.
 
 | Baseline | Data prevista | ICs incluídos | Critério de aprovação |
 | --- | --- | --- | --- |
 | BL-PLAN | 19/11/2026 | DGD-GER-001, DGD-GER-002 | Papéis confirmados e PGC revisado pela equipe |
 | BL-REQ | 20/11/2026 | DGD-REQ-001, DGD-REQ-002 | ERS revisada e aprovada pelo CCB, cada RF com critério de aceitação |
-| BL-IMPL | 24/11/2026 | DGD-ARQ-001, DGD-BD-001, DGD-COD-001, DGD-COD-002, DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
+| BL-PROJ | 21/11/2026 | DGD-ARQ-001, DGD-BD-001, DGD-TST-001 | Documentos técnicos revisados pela equipe, consistentes com a BL-REQ e aprovados pelo CCB |
+| BL-IMPL | 24/11/2026 | DGD-COD-001, DGD-COD-002 e as versões vigentes de DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
 | BL-REL | 25/11/2026 | Todos os ICs + DGD-REL-001 | Auditorias FCA e PCA aprovadas; tag `v1.0.0` |
 
 Cada baseline gera uma tag em `main`, uma entrada no Relatório de Status e a versão `1.0` (ou superior) dos documentos incluídos.

@@ -1,0 +1,14 @@
+﻿ID;Item;Tipo;Responsável;Versão;Status;Baseline;Local no repositório;Atualizado em
+DGD-GER-001;Plano de Gerência de Configuração;GER;Hugo Henry Lemos Carvalho;1.1;Aprovado;BL-PLAN;docs/gerencia/;18/11/2026
+DGD-GER-002;Lista de Itens de Configuração;GER;Hugo Henry Lemos Carvalho;1.1;Aprovado;BL-PLAN;docs/gerencia/;18/11/2026
+DGD-GER-003;Registro de SMs e Atas do CCB;GER;Hugo Henry Lemos Carvalho;0.7;Em elaboração;BL-REL;docs/gerencia/;18/11/2026
+DGD-GER-004;Relatório de Status da Configuração;GER;Hugo Henry Lemos Carvalho;0.7;Em elaboração;BL-REL;docs/gerencia/;18/11/2026
+DGD-GER-005;Relatório de Auditoria de Configuração;GER;"Hugo Henry Lemos Carvalho; Iago Medice Ferreira da Silva";0.2;Em elaboração;BL-REL;docs/gerencia/;18/11/2026
+DGD-REQ-001;Especificação de Requisitos de Software (ERS);REQ;Renata Martins da Silva;1.0;Aprovado;BL-REQ;docs/requisitos/;18/11/2026
+DGD-REQ-002;Matriz de Rastreabilidade;REQ;Renata Martins da Silva;1.0;Aprovado;BL-REQ;docs/requisitos/;18/11/2026
+DGD-ARQ-001;Documento de Arquitetura;ARQ;João Vitor Simonetti;1.0;Aprovado;BL-PROJ;docs/arquitetura/;18/11/2026
+DGD-BD-001;Modelo de dados e scripts de migração;BD;João Vitor Simonetti;1.0;Aprovado;BL-PROJ;database/migrations/;18/11/2026
+DGD-COD-001;Código-fonte do front-end;COD;João Vitor Simonetti;;Planejado;BL-IMPL;frontend/;
+DGD-COD-002;Código-fonte do back-end;COD;João Vitor Simonetti;;Planejado;BL-IMPL;backend/;
+DGD-TST-001;Plano e Casos de Teste;TST;Iago Medice Ferreira da Silva;1.0;Aprovado;BL-PROJ;tests/;18/11/2026
+DGD-REL-001;Notas de Release (CHANGELOG);REL;Hugo Henry Lemos Carvalho;0.6;Em elaboração;BL-REL;CHANGELOG.md;18/11/2026
