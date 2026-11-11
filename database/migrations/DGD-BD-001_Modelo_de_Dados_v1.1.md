@@ -1,4 +1,4 @@
-# DGD-BD-001 — Modelo de Dados — DayGrid
+# DGD-BD-001: Modelo de Dados do DayGrid
 
 Data: 18/11/2026
 
@@ -10,16 +10,17 @@ O banco do DayGrid tem 9 tabelas em MySQL 8.0 (InnoDB, `utf8mb4`). Todas, menos 
 | --- | --- |
 | ID do IC | DGD-BD-001 |
 | Título | Modelo de dados e scripts de migração |
-| Versão | 1.0 (aprovada — baseline BL-PROJ) |
+| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
 | Responsável | João Vitor Simonetti (DBA) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
 | Local no repositório | `database/migrations/` |
-| Documentos de base | DGD-REQ-001 (ERS) v1.0 · DGD-ARQ-001 (Arquitetura) v1.0 |
+| Documentos de base | DGD-REQ-001 (ERS) v1.1 · DGD-ARQ-001 (Arquitetura) v1.1 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados (células vazias ficam em branco) e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4) |
 | 0.3 | 18/11/2026 | Equipe DayGrid | `tarefa.data_prevista` passa a ser NOT NULL; token de redefinição vale 15 minutos |
@@ -42,111 +43,111 @@ Convenções: toda chave primária é `id BIGINT UNSIGNED AUTO_INCREMENT`. Colun
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
-| nome | VARCHAR(100) | Não | — | RF01 |
+| id | BIGINT UNSIGNED | Não | PK |  |
+| nome | VARCHAR(100) | Não |  | RF01 |
 | email | VARCHAR(255) | Não | UNIQUE | RF01, RF02 |
 | senha_hash | CHAR(60) | Não | Hash bcrypt | RNF03 |
-| criado_em | DATETIME | Não | — | — |
+| criado_em | DATETIME | Não |  |  |
 
 ### 3.2 etiqueta
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RNF04 |
 | nome | VARCHAR(40) | Não | UNIQUE (usuario_id, nome) | RF25, RN01 |
-| criado_em | DATETIME | Não | — | — |
+| criado_em | DATETIME | Não |  |  |
 
 ### 3.3 meta
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RNF04 |
-| titulo | VARCHAR(120) | Não | — | RF17 |
-| descricao | TEXT | Sim | — | RF17 |
-| prazo | DATE | Não | — | RF17 |
-| criado_em | DATETIME | Não | — | — |
+| titulo | VARCHAR(120) | Não |  | RF17 |
+| descricao | TEXT | Sim |  | RF17 |
+| prazo | DATE | Não |  | RF17 |
+| criado_em | DATETIME | Não |  |  |
 
 ### 3.4 tarefa
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RNF04 |
 | etiqueta_id | BIGINT UNSIGNED | Não | FK → etiqueta (RESTRICT) | RN01 |
 | meta_id | BIGINT UNSIGNED | Sim | FK → meta (SET NULL) | RF18, RN07 |
-| titulo | VARCHAR(120) | Não | — | RF05 |
-| descricao | TEXT | Sim | — | RF05 |
-| data_prevista | DATE | Não | — | RF05, RF10, RF12 |
+| titulo | VARCHAR(120) | Não |  | RF05 |
+| descricao | TEXT | Sim |  | RF05 |
+| data_prevista | DATE | Não |  | RF05, RF10, RF12 |
 | prioridade | ENUM('baixa','media','alta') | Não | Padrão 'media' | RN03 |
 | status | ENUM('pendente','em_andamento','concluida') | Não | Padrão 'pendente' | RN02 |
 | concluida_em | DATETIME | Sim | Preenchida ao concluir | RF08, RF23 |
-| criado_em | DATETIME | Não | — | — |
-| atualizado_em | DATETIME | Não | — | — |
+| criado_em | DATETIME | Não |  |  |
+| atualizado_em | DATETIME | Não |  |  |
 
 ### 3.5 subtarefa
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | tarefa_id | BIGINT UNSIGNED | Não | FK → tarefa (CASCADE) | RF07, RF09 |
-| titulo | VARCHAR(120) | Não | — | RF09 |
+| titulo | VARCHAR(120) | Não |  | RF09 |
 | concluida | BOOLEAN | Não | Padrão FALSE | RF09 |
-| criado_em | DATETIME | Não | — | — |
+| criado_em | DATETIME | Não |  |  |
 
 ### 3.6 remarcacao
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | tarefa_id | BIGINT UNSIGNED | Não | FK → tarefa (CASCADE) | RF12 |
-| data_anterior | DATE | Não | — | RN04 |
+| data_anterior | DATE | Não |  | RN04 |
 | data_nova | DATE | Não | CHECK data_nova > data_anterior | RN04 |
-| remarcada_em | DATETIME | Não | — | RF12 |
+| remarcada_em | DATETIME | Não |  | RF12 |
 
 ### 3.7 lembrete
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RNF04 |
 | tarefa_id | BIGINT UNSIGNED | Sim | FK → tarefa (CASCADE) | RF07, RN08 |
-| titulo | VARCHAR(120) | Não | — | RF13 |
+| titulo | VARCHAR(120) | Não |  | RF13 |
 | recorrencia | ENUM('nenhuma','diaria','semanal','mensal') | Não | Padrão 'nenhuma' | RF14 |
-| proximo_envio | DATETIME | Não | — | RF13, RF15 |
+| proximo_envio | DATETIME | Não |  | RF13, RF15 |
 | dia_referencia | TINYINT UNSIGNED | Não | CHECK entre 1 e 31 | RN09 |
 | ativo | BOOLEAN | Não | Padrão TRUE | RF15, RF16 |
-| ultimo_envio | DATETIME | Sim | — | RF15 |
-| criado_em | DATETIME | Não | — | — |
+| ultimo_envio | DATETIME | Sim |  | RF15 |
+| criado_em | DATETIME | Não |  |  |
 
 ### 3.8 relatorio_semanal
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RNF04 |
 | semana_inicio | DATE | Não | UNIQUE (usuario_id, semana_inicio); sempre segunda-feira | RN10 |
 | semana_fim | DATE | Não | Sempre domingo | RN10 |
-| total_tarefas | INT UNSIGNED | Não | — | RF22 |
-| total_concluidas | INT UNSIGNED | Não | — | RF22 |
-| total_adiadas | INT UNSIGNED | Não | — | RF22 |
-| pct_concluidas | DECIMAL(5,2) | Não | — | RF22 |
-| pct_adiadas | DECIMAL(5,2) | Não | — | RF22 |
+| total_tarefas | INT UNSIGNED | Não |  | RF22 |
+| total_concluidas | INT UNSIGNED | Não |  | RF22 |
+| total_adiadas | INT UNSIGNED | Não |  | RF22 |
+| pct_concluidas | DECIMAL(5,2) | Não |  | RF22 |
+| pct_adiadas | DECIMAL(5,2) | Não |  | RF22 |
 | dias_produtivos | JSON | Não | Ex.: `["terca", "quinta"]` | RF23 |
 | progresso_metas | JSON | Não | Ex.: `[{"meta_id": 3, "progresso": 37.5}]` | RF24 |
-| gerado_em | DATETIME | Não | — | RF21 |
+| gerado_em | DATETIME | Não |  | RF21 |
 
 ### 3.9 token_redefinicao
 
 | Coluna | Tipo | Nulo | Restrição | Requisito |
 | --- | --- | --- | --- | --- |
-| id | BIGINT UNSIGNED | Não | PK | — |
+| id | BIGINT UNSIGNED | Não | PK |  |
 | usuario_id | BIGINT UNSIGNED | Não | FK → usuario | RF04 |
 | token_hash | CHAR(64) | Não | UNIQUE; SHA-256 do token enviado | RF04 |
 | expira_em | DATETIME | Não | criado_em + 15 minutos | RF04 |
 | usado_em | DATETIME | Sim | Preenchido ao usar: o link deixa de valer | RF04 |
-| criado_em | DATETIME | Não | — | — |
+| criado_em | DATETIME | Não |  |  |
 
 ## 4. Integridade
 
@@ -169,16 +170,16 @@ Algumas regras são garantidas pelo próprio banco; outras ficam no serviço, po
 
 | Regra | Garantida por | Onde |
 | --- | --- | --- |
-| RN01 — Etiqueta obrigatória, personalizável e substituída ao excluir | `tarefa.etiqueta_id NOT NULL` + FK RESTRICT + UNIQUE (usuario_id, nome) | Banco + EtiquetaService |
-| RN02 — Status e status inicial | ENUM com padrão 'pendente' | Banco |
-| RN03 — Prioridades e padrão Média | ENUM com padrão 'media' | Banco |
-| RN04 — Tarefa adiada | Tabela `remarcacao` (só aceita data nova posterior) + consulta da seção 5 | Banco + RelatorioService |
-| RN05 — Subtarefas não contam | Ficam em tabela separada, fora das consultas de meta e relatório | Banco + serviços |
-| RN06 — Progresso da meta | Consulta da seção 5, calculada a cada leitura | MetaService |
-| RN07 — No máximo uma meta por tarefa | Uma única coluna `tarefa.meta_id` | Banco |
-| RN08 — Lembrete opcionalmente vinculado | `lembrete.tarefa_id` aceita nulo | Banco + job de lembretes |
-| RN09 — Recorrência | `recorrencia`, `proximo_envio` e `dia_referencia` | Banco + LembreteService |
-| RN10 — Relatório de segunda a domingo | UNIQUE (usuario_id, semana_inicio): um relatório por semana | Banco + RelatorioService |
+| RN01: Etiqueta obrigatória, personalizável e substituída ao excluir | `tarefa.etiqueta_id NOT NULL` + FK RESTRICT + UNIQUE (usuario_id, nome) | Banco + EtiquetaService |
+| RN02: Status e status inicial | ENUM com padrão 'pendente' | Banco |
+| RN03: Prioridades e padrão Média | ENUM com padrão 'media' | Banco |
+| RN04: Tarefa adiada | Tabela `remarcacao` (só aceita data nova posterior) + consulta da seção 5 | Banco + RelatorioService |
+| RN05: Subtarefas não contam | Ficam em tabela separada, fora das consultas de meta e relatório | Banco + serviços |
+| RN06: Progresso da meta | Consulta da seção 5, calculada a cada leitura | MetaService |
+| RN07: No máximo uma meta por tarefa | Uma única coluna `tarefa.meta_id` | Banco |
+| RN08: Lembrete opcionalmente vinculado | `lembrete.tarefa_id` aceita nulo | Banco + job de lembretes |
+| RN09: Recorrência | `recorrencia`, `proximo_envio` e `dia_referencia` | Banco + LembreteService |
+| RN10: Relatório de segunda a domingo | UNIQUE (usuario_id, semana_inicio): um relatório por semana | Banco + RelatorioService |
 
 Por que existe a tabela `remarcacao`: quando uma tarefa é remarcada da quarta para a semana seguinte, a `data_prevista` dela sai da semana atual. Sem o histórico, o relatório dessa semana não saberia que ela foi adiada.
 

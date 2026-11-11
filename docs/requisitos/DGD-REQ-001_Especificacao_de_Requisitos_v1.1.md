@@ -1,4 +1,4 @@
-# DGD-REQ-001 — Especificação de Requisitos de Software — DayGrid
+# DGD-REQ-001: Especificação de Requisitos de Software do DayGrid
 
 Data: 18/11/2026
 
@@ -10,15 +10,16 @@ Esta ERS define o que o DayGrid deve fazer: 25 requisitos funcionais, 10 regras 
 | --- | --- |
 | ID do IC | DGD-REQ-001 |
 | Título | Especificação de Requisitos de Software (ERS) |
-| Versão | 1.0 (aprovada — baseline BL-REQ) |
+| Versão | 1.1 (aprovada, baseline BL-REQ, alterada pela SM-002) |
 | Responsável | Renata Martins da Silva (Analista de Requisitos) |
-| Aprovação | CCB do projeto — ATA-002, 18/11/2026 |
+| Aprovação | CCB do projeto (ATA-002, 18/11/2026) |
 | Baseline | BL-REQ (criada em 18/11/2026) |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.1 | 18/11/2026 | Renata Martins da Silva | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Renata Martins da Silva | Aprovada pelo CCB (ATA-002); entra na baseline BL-REQ |
 | 0.8 | 18/11/2026 | Renata Martins da Silva | Troca de meta exige desvincular antes (RN07 e RF18), conforme ATA-001, decisão 20 |
 | 0.7 | 18/11/2026 | Renata Martins da Silva | Link de redefinição passa a valer 15 minutos (RF04); data prevista obrigatória na tarefa (RF05) |
@@ -41,11 +42,11 @@ O sistema é uma aplicação web com cinco módulos:
 
 | Módulo | Requisitos |
 | --- | --- |
-| M0 — Usuários | RF01 a RF04 |
-| M1 — Tarefas | RF05 a RF12 e RF25 |
-| M2 — Lembretes | RF13 a RF16 |
-| M3 — Metas | RF17 a RF20 |
-| M4 — Relatório semanal | RF21 a RF24 |
+| M0: Usuários | RF01 a RF04 |
+| M1: Tarefas | RF05 a RF12 e RF25 |
+| M2: Lembretes | RF13 a RF16 |
+| M3: Metas | RF17 a RF20 |
+| M4: Relatório semanal | RF21 a RF24 |
 
 Fora do escopo da versão 1.0: aplicativo mobile nativo, compartilhamento de tarefas entre usuários e notificações por push ou SMS.
 
@@ -60,7 +61,7 @@ Há um único perfil: o **usuário cadastrado**, que gerencia apenas os próprio
 
 ## 3. Requisitos funcionais
 
-### 3.1 M0 — Usuários
+### 3.1 M0: Usuários
 
 | ID | Requisito | Prioridade | Critério de aceitação |
 | --- | --- | --- | --- |
@@ -69,7 +70,7 @@ Há um único perfil: o **usuário cadastrado**, que gerencia apenas os próprio
 | RF03 | O sistema deve permitir que o usuário encerre a sessão. | Essencial | Depois do logout, as páginas internas redirecionam para o login |
 | RF04 | O sistema deve permitir redefinir a senha por um link enviado ao e-mail cadastrado. | Desejável | O link vale por 15 minutos e expira depois de usado |
 
-### 3.2 M1 — Tarefas
+### 3.2 M1: Tarefas
 
 | ID | Requisito | Prioridade | Critério de aceitação |
 | --- | --- | --- | --- |
@@ -83,7 +84,7 @@ Há um único perfil: o **usuário cadastrado**, que gerencia apenas os próprio
 | RF12 | O sistema deve permitir remarcar a data prevista de uma tarefa. | Importante | A remarcação para uma data posterior marca a tarefa como adiada (RN04) |
 | RF25 | O sistema deve permitir que o usuário crie, renomeie e exclua as próprias etiquetas (RN01). | Importante | Nomes de etiqueta repetidos são recusados; ao excluir uma etiqueta em uso, o usuário deve escolher outra etiqueta para as tarefas afetadas |
 
-### 3.3 M2 — Lembretes
+### 3.3 M2: Lembretes
 
 | ID | Requisito | Prioridade | Critério de aceitação |
 | --- | --- | --- | --- |
@@ -92,7 +93,7 @@ Há um único perfil: o **usuário cadastrado**, que gerencia apenas os próprio
 | RF15 | O sistema deve enviar o lembrete por e-mail ao endereço cadastrado no horário definido. | Essencial | O e-mail traz o título do lembrete e, se houver, o da tarefa |
 | RF16 | O sistema deve permitir editar e excluir lembretes. | Essencial | Um lembrete excluído não é mais enviado |
 
-### 3.4 M3 — Metas
+### 3.4 M3: Metas
 
 | ID | Requisito | Prioridade | Critério de aceitação |
 | --- | --- | --- | --- |
@@ -101,7 +102,7 @@ Há um único perfil: o **usuário cadastrado**, que gerencia apenas os próprio
 | RF19 | O sistema deve exibir uma barra de progresso da meta, calculada automaticamente (RN06). | Essencial | O percentual muda assim que uma tarefa vinculada é concluída ou reaberta |
 | RF20 | O sistema deve permitir editar e excluir metas. | Importante | Ao excluir a meta, as tarefas vinculadas continuam existindo, sem meta |
 
-### 3.5 M4 — Relatório semanal
+### 3.5 M4: Relatório semanal
 
 | ID | Requisito | Prioridade | Critério de aceitação |
 | --- | --- | --- | --- |

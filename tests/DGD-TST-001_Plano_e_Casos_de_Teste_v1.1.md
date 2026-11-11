@@ -1,4 +1,4 @@
-# DGD-TST-001 — Plano e Casos de Teste — DayGrid
+# DGD-TST-001: Plano e Casos de Teste do DayGrid
 
 Data: 18/11/2026
 
@@ -10,16 +10,17 @@ Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos da 
 | --- | --- |
 | ID do IC | DGD-TST-001 |
 | Título | Plano e Casos de Teste |
-| Versão | 1.0 (aprovada — baseline BL-PROJ) |
+| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
 | Responsável | Iago Medice Ferreira da Silva (Analista de Testes) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
 | Local no repositório | `tests/` |
-| Documentos de base | DGD-REQ-001 (ERS) v1.0 · DGD-ARQ-001 (Arquitetura) v1.0 · DGD-BD-001 (Modelo de Dados) v1.0 · DGD-REQ-002 (Matriz de Rastreabilidade) |
+| Documentos de base | DGD-REQ-001 (ERS) v1.1 · DGD-ARQ-001 (Arquitetura) v1.1 · DGD-BD-001 (Modelo de Dados) v1.1 · DGD-REQ-002 (Matriz de Rastreabilidade) |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.2 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4, BD v0.4) |
 | 0.1 | 18/11/2026 | Equipe DayGrid | Criação: 44 casos de teste |
@@ -69,7 +70,7 @@ Os testes seguem a separação em camadas da arquitetura (DA-03). Por isso, a ma
 
 Um caso de requisito Importante ou Desejável pode ficar reprovado na BL-IMPL somente se o CCB aprovar e o defeito ficar registrado nas Notas de Release (DGD-REL-001) como problema conhecido.
 
-## 5. Casos de teste — M0 Usuários
+## 5. Casos de teste: M0 Usuários
 
 | ID | Requisito | Tipo | Cenário e passos | Resultado esperado |
 | --- | --- | --- | --- | --- |
@@ -84,7 +85,7 @@ Um caso de requisito Importante ou Desejável pode ficar reprovado na BL-IMPL so
 | CT-09 | RNF03 | Unitário | Cadastrar o usuário e ler `senha_hash` no banco | O valor começa com `$2b$` (bcrypt), tem 60 caracteres e é diferente da senha digitada |
 | CT-10 | RNF04 | Integração | Logado como Bruno, pedir `GET`, `PUT` e `DELETE` em uma tarefa da Ana | `404` nas três chamadas; a tarefa da Ana não muda |
 
-## 6. Casos de teste — M1 Tarefas e etiquetas
+## 6. Casos de teste: M1 Tarefas e etiquetas
 
 | ID | Requisito | Tipo | Cenário e passos | Resultado esperado |
 | --- | --- | --- | --- | --- |
@@ -101,7 +102,7 @@ Um caso de requisito Importante ou Desejável pode ficar reprovado na BL-IMPL so
 | CT-21 | RF25 | Integração | Renomear "Academia" para "Saúde" | `200`; as tarefas com essa etiqueta passam a mostrar "Saúde" |
 | CT-22 | RF25, RN01 | Integração | Excluir uma etiqueta usada por 3 tarefas: primeiro sem `substituta`, depois com `substituta` = Pessoal | Sem substituta: `400` e nada muda. Com substituta: as 3 tarefas passam para Pessoal e a etiqueta é excluída |
 
-## 7. Casos de teste — M2 Lembretes
+## 7. Casos de teste: M2 Lembretes
 
 | ID | Requisito | Tipo | Cenário e passos | Resultado esperado |
 | --- | --- | --- | --- | --- |
@@ -113,7 +114,7 @@ Um caso de requisito Importante ou Desejável pode ficar reprovado na BL-IMPL so
 | CT-28 | RF16 | Integração | Editar o horário de um lembrete; excluir outro e executar o job no horário dele | A edição muda `proximo_envio`; o lembrete excluído não gera e-mail |
 | CT-29 | RF15, RNF05 | Manual | Com a conta Gmail real, criar um lembrete para daqui a 3 minutos e aguardar | O e-mail chega à caixa de entrada em até 5 minutos depois do horário; anotar o horário de chegada como evidência |
 
-## 8. Casos de teste — M3 Metas
+## 8. Casos de teste: M3 Metas
 
 | ID | Requisito | Tipo | Cenário e passos | Resultado esperado |
 | --- | --- | --- | --- | --- |
@@ -122,7 +123,7 @@ Um caso de requisito Importante ou Desejável pode ficar reprovado na BL-IMPL so
 | CT-32 | RF19, RN06 | Integração | Na meta "Entregar o DayGrid" (8 tarefas, 3 concluídas), consultar o progresso; concluir mais 1 e consultar de novo; consultar uma meta sem tarefas | 37,5% → 50,0%; a meta sem tarefas mostra 0% |
 | CT-33 | RF20 | Integração | Editar o prazo da meta e depois excluí-la | A edição dá `200`; após a exclusão, as 8 tarefas continuam existindo, com `meta_id` nulo |
 
-## 9. Casos de teste — M4 Relatório semanal
+## 9. Casos de teste: M4 Relatório semanal
 
 Todos os casos usam a semana de referência: de segunda 16/11/2026 a domingo 22/11/2026.
 
@@ -135,7 +136,7 @@ Todos os casos usam a semana de referência: de segunda 16/11/2026 a domingo 22/
 | CT-38 | RF24, RN06 | Integração | Gerar o relatório com a meta "Entregar o DayGrid" em 37,5% e depois concluir mais uma tarefa da meta | O relatório guarda 37,5%. A barra da meta passa para 50%, mas o relatório já gerado não muda |
 | CT-39 | RN05 | Unitário | Uma tarefa da semana com 4 subtarefas concluídas e a tarefa principal pendente | O relatório conta 1 tarefa (adiada), e não 5; subtarefas não entram na contagem |
 
-## 10. Casos de teste — Requisitos não funcionais
+## 10. Casos de teste: requisitos não funcionais
 
 Os RNF03 e RNF04 já estão cobertos pelos casos CT-09 e CT-10, e o RNF05 pelo CT-29.
 
@@ -151,7 +152,7 @@ Os RNF03 e RNF04 já estão cobertos pelos casos CT-09 e CT-10, e o RNF05 pelo C
 
 Cada teste automático tem o ID do caso no nome da função (`test_ct27_...`). Assim, o relatório do pytest no CI mostra diretamente quais casos passaram.
 
-### 11.1 Teste unitário — CT-27 (RN09)
+### 11.1 Teste unitário: CT-27 (RN09)
 
 Este teste foi executado contra a função `proximo_mensal` do Documento de Arquitetura (seção 6.1), e os dois cenários passaram.
 
@@ -176,7 +177,7 @@ def test_ct27_recorrencia_mensal_vai_para_ultimo_dia(inicio, esperado):
     assert sequencia(inicio, 31, 4) == esperado
 ```
 
-### 11.2 Teste de integração — CT-22 (RF25, RN01)
+### 11.2 Teste de integração: CT-22 (RF25, RN01)
 
 ```python
 # tests/integration/test_etiquetas.py

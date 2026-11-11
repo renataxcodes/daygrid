@@ -1,6 +1,6 @@
-# Changelog — DayGrid
+# Changelog do DayGrid
 
-> **IC:** DGD-REL-001 · **Versão do documento:** 0.6 (rascunho) · **Responsável:** Hugo Henry Lemos Carvalho
+> **IC:** DGD-REL-001 · **Versão do documento:** 0.7 (rascunho) · **Responsável:** Hugo Henry Lemos Carvalho
 > **Baseline:** BL-REL (prevista para 25/11/2026)
 
 Todas as mudanças relevantes do DayGrid ficam registradas aqui, da mais recente para a mais antiga.
@@ -23,44 +23,45 @@ problemas conhecidos e instruções de instalação (DGD-GER-001, seção 10.1).
 
 ### SMs
 - **SM-001** aberta em 18/11/2026 por Renata Martins da Silva: criar a baseline BL-PROJ (DGD-ARQ-001, DGD-BD-001, DGD-TST-001). Aprovada por unanimidade na ATA-003 e implementada no mesmo dia (PGC e Lista de ICs na v1.1)
+- **SM-002** aberta em 18/11/2026 por Renata Martins da Silva: revisão editorial dos documentos em baseline (travessões retirados, cabeçalho das tabelas padronizado e novo modelo de exportação .docx). Aprovada por unanimidade na ATA-004 e implementada no mesmo dia (PGC e Lista de ICs na v1.2; ERS, Arquitetura, Modelo de Dados e Plano de Testes na v1.1)
 
 ### Adicionado
 - Documentação do projeto, em versão de rascunho (18/11/2026):
-  - DGD-GER-001 — Plano de Gerência de Configuração (v1.1, aprovado)
-  - DGD-GER-002 — Lista de Itens de Configuração (v1.1, aprovada)
-  - DGD-GER-003 — Registro de SMs e Atas do CCB (v0.7), com a ATA-001, a ATA-002, a ATA-003 e a SM-001
-  - DGD-GER-004 — Relatório de Status da Configuração (v0.7)
-  - DGD-GER-005 — Relatório de Auditoria de Configuração (v0.2)
-  - DGD-REQ-001 — Especificação de Requisitos de Software (v1.0, aprovada): 25 RF, 10 RN e 8 RNF
-  - DGD-REQ-002 — Matriz de Rastreabilidade (v1.0, aprovada): 33 requisitos ligados a componentes, tabelas e testes
-  - DGD-ARQ-001 — Documento de Arquitetura (v1.0, aprovado): 10 decisões, 9 componentes e 31 rotas da API
-  - DGD-BD-001 — Modelo de Dados (v1.0, aprovado) e script `database/migrations/0001_esquema_inicial.sql`: 9 tabelas
-  - DGD-TST-001 — Plano e Casos de Teste (v1.0, aprovado): 44 casos de teste
-  - DGD-REL-001 — este CHANGELOG (v0.4)
+  - DGD-GER-001: Plano de Gerência de Configuração (v1.2, aprovado)
+  - DGD-GER-002: Lista de Itens de Configuração (v1.2, aprovada)
+  - DGD-GER-003: Registro de SMs e Atas do CCB (v0.9), com as atas ATA-001 a ATA-004 e as SM-001 e SM-002
+  - DGD-GER-004: Relatório de Status da Configuração (v0.8)
+  - DGD-GER-005: Relatório de Auditoria de Configuração (v0.2)
+  - DGD-REQ-001: Especificação de Requisitos de Software (v1.1, aprovada): 25 RF, 10 RN e 8 RNF
+  - DGD-REQ-002: Matriz de Rastreabilidade (v1.0, aprovada): 33 requisitos ligados a componentes, tabelas e testes
+  - DGD-ARQ-001: Documento de Arquitetura (v1.1, aprovado): 10 decisões, 9 componentes e 31 rotas da API
+  - DGD-BD-001: Modelo de Dados (v1.1, aprovado) e script `database/migrations/0001_esquema_inicial.sql`: 9 tabelas
+  - DGD-TST-001: Plano e Casos de Teste (v1.1, aprovado): 44 casos de teste
+  - DGD-REL-001: este CHANGELOG (v0.7)
 
 ### SMs incluídas
 - Nenhuma até 18/11/2026.
 
 ---
 
-## [1.0.0] — 25/11/2026 *(planejada)*
+## [1.0.0] - 25/11/2026 *(planejada)*
 
 > Esta seção será preenchida na criação da BL-REL. O modelo abaixo mostra o que ela deve conter.
 
 ### Adicionado
-- M0 — Usuários: cadastro, login, logout e redefinição de senha por e-mail (RF01 a RF04)
-- M1 — Tarefas: tarefas com status, prioridade, etiqueta e subtarefas; lista do dia; filtros;
+- M0 (Usuários): cadastro, login, logout e redefinição de senha por e-mail (RF01 a RF04)
+- M1 (Tarefas): tarefas com status, prioridade, etiqueta e subtarefas; lista do dia; filtros;
   remarcação; etiquetas personalizáveis (RF05 a RF12, RF25)
-- M2 — Lembretes: lembretes por e-mail, com recorrência diária, semanal ou mensal (RF13 a RF16)
-- M3 — Metas: metas com prazo e barra de progresso automática (RF17 a RF20)
-- M4 — Relatório semanal: gerado todo domingo às 23h59, com concluídas e adiadas,
+- M2 (Lembretes): lembretes por e-mail, com recorrência diária, semanal ou mensal (RF13 a RF16)
+- M3 (Metas): metas com prazo e barra de progresso automática (RF17 a RF20)
+- M4 (Relatório semanal): gerado todo domingo às 23h59, com concluídas e adiadas,
   dias mais produtivos e progresso das metas (RF21 a RF24)
 
 ### Corrigido
 - *(defeitos corrigidos durante os testes, com o número da issue)*
 
 ### SMs incluídas
-- *(SM-NNN — resumo)*
+- *(SM-NNN: resumo)*
 
 ### Problemas conhecidos
 - *(requisitos não aprovados com decisão do CCB, conforme DGD-TST-001, seção 4)*

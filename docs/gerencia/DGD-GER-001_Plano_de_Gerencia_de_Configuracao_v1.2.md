@@ -1,4 +1,4 @@
-# DGD-GER-001 — Plano de Gerência de Configuração — DayGrid
+# DGD-GER-001: Plano de Gerência de Configuração do DayGrid
 
 Data: 18/11/2026
 
@@ -10,16 +10,17 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 | --- | --- |
 | ID do IC | DGD-GER-001 |
 | Título | Plano de Gerência de Configuração (PGC) |
-| Projeto | DayGrid — lista de afazeres diária |
-| Versão | 1.1 (aprovada — baseline BL-PLAN, alterada pela SM-001) |
+| Projeto | DayGrid (lista de afazeres diária) |
+| Versão | 1.2 (aprovada, baseline BL-PLAN, alterada pelas SM-001 e SM-002) |
 | Autor | Equipe DayGrid |
-| Aprovação | CCB do projeto — ATA-002, 18/11/2026 |
-| Norma de referência | IEEE 828 — Configuration Management in Systems and Software Engineering |
+| Aprovação | CCB do projeto (ATA-002, 18/11/2026) |
+| Norma de referência | IEEE 828: Configuration Management in Systems and Software Engineering |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.2 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo |
 | 1.1 | 18/11/2026 | Equipe DayGrid | SM-001 (ATA-003): nova baseline BL-PROJ na seção 7; BL-IMPL passa a incluir as versões vigentes dos documentos técnicos |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-002); entra na baseline BL-PLAN |
 | 0.3 | 18/11/2026 | Equipe DayGrid | Horário do relatório semanal alinhado à ERS v0.5 (domingo às 23h59) |
@@ -38,11 +39,11 @@ O DayGrid é uma aplicação web de lista de afazeres diária. Ele permite que o
 
 | Módulo | Responsabilidade |
 | --- | --- |
-| M0 — Usuários | Cadastro, login e isolamento dos dados de cada usuário |
-| M1 — Tarefas | Status, prioridade, etiquetas personalizáveis e subtarefas |
-| M2 — Lembretes | Alerta por data e hora, enviado por e-mail, com recorrência diária, semanal ou mensal |
-| M3 — Metas | Objetivos com prazo e progresso calculado pelas tarefas vinculadas |
-| M4 — Relatório semanal | Gerado todo domingo às 23h59 e exibido em uma tela do sistema |
+| M0: Usuários | Cadastro, login e isolamento dos dados de cada usuário |
+| M1: Tarefas | Status, prioridade, etiquetas personalizáveis e subtarefas |
+| M2: Lembretes | Alerta por data e hora, enviado por e-mail, com recorrência diária, semanal ou mensal |
+| M3: Metas | Objetivos com prazo e progresso calculado pelas tarefas vinculadas |
+| M4: Relatório semanal | Gerado todo domingo às 23h59 e exibido em uma tela do sistema |
 
 ### 2.3 Escopo da GC
 

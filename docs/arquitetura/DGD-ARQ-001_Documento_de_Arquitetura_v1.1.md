@@ -1,4 +1,4 @@
-# DGD-ARQ-001 — Documento de Arquitetura — DayGrid
+# DGD-ARQ-001: Documento de Arquitetura do DayGrid
 
 Data: 18/11/2026
 
@@ -10,15 +10,16 @@ O DayGrid é uma aplicação web em três camadas: um front-end estático em HTM
 | --- | --- |
 | ID do IC | DGD-ARQ-001 |
 | Título | Documento de Arquitetura |
-| Versão | 1.0 (aprovada — baseline BL-PROJ) |
+| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
 | Responsável | João Vitor Simonetti (Desenvolvedor full-stack, DBA e DevOps) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
-| Documentos de base | DGD-GER-001 (PGC) v1.1 · DGD-REQ-001 (ERS) v1.0 · DGD-REQ-002 (Matriz de Rastreabilidade) v1.0 · DGD-BD-001 (Modelo de Dados) v1.0 |
+| Documentos de base | DGD-GER-001 (PGC) v1.2 · DGD-REQ-001 (ERS) v1.1 · DGD-REQ-002 (Matriz de Rastreabilidade) v1.0 · DGD-BD-001 (Modelo de Dados) v1.1 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: código do relatório alinhado à RN10 e ao DGD-BD-001 (6.2); recusa ao vincular tarefa a uma segunda meta (5.4); documentos de base atualizados |
 | 0.3 | 18/11/2026 | Equipe DayGrid | Entidade `remarcacao` incluída (seção 7), alinhada ao DGD-BD-001 v0.1 |
@@ -63,7 +64,7 @@ Uma requisição sempre passa pelas três camadas, nesta ordem:
 Exemplo do fluxo do RF08 (alterar status):
 
 ```python
-# routes/tarefas.py — só HTTP
+# routes/tarefas.py: só HTTP
 @bp.patch("/<int:tarefa_id>/status")
 @login_required
 def alterar_status(tarefa_id):
@@ -71,7 +72,7 @@ def alterar_status(tarefa_id):
     tarefa = tarefa_service.alterar_status(current_user.id, tarefa_id, novo_status)
     return jsonify(tarefa.to_dict()), 200
 
-# services/tarefa_service.py — regras de negócio
+# services/tarefa_service.py: regras de negócio
 STATUS_VALIDOS = {"pendente", "em_andamento", "concluida"}   # RN02
 
 def alterar_status(usuario_id, tarefa_id, novo_status):
@@ -104,7 +105,7 @@ Os IDs `CMP-NN` são os que vão para a coluna "Componente" da Matriz de Rastrea
 
 Todas as rotas ficam sob `/api`, recebem e devolvem JSON, e todas, exceto as de cadastro, login e redefinição de senha, exigem login. Os códigos de resposta são: `200` ok, `201` criado, `204` sem conteúdo, `400` dado inválido, `401` sem login, `404` não encontrado (inclusive quando o recurso é de outro usuário) e `409` conflito (como e-mail ou etiqueta repetidos).
 
-### 5.1 M0 — Usuários (CMP-01)
+### 5.1 M0: Usuários (CMP-01)
 
 | Método | Rota | Ação | RF |
 | --- | --- | --- | --- |
@@ -114,7 +115,7 @@ Todas as rotas ficam sob `/api`, recebem e devolvem JSON, e todas, exceto as de 
 | POST | `/api/auth/esqueci-senha` | Envia o link de redefinição por e-mail | RF04 |
 | POST | `/api/auth/redefinir-senha` | Troca a senha usando o token do link | RF04 |
 
-### 5.2 M1 — Tarefas e etiquetas (CMP-02, CMP-03)
+### 5.2 M1: Tarefas e etiquetas (CMP-02, CMP-03)
 
 | Método | Rota | Ação | RF |
 | --- | --- | --- | --- |
@@ -131,7 +132,7 @@ Todas as rotas ficam sob `/api`, recebem e devolvem JSON, e todas, exceto as de 
 | PUT | `/api/etiquetas/<id>` | Renomeia a etiqueta | RF25 |
 | DELETE | `/api/etiquetas/<id>?substituta=<id>` | Exclui a etiqueta; se ela estiver em uso, `substituta` é obrigatória | RF25 |
 
-### 5.3 M2 — Lembretes (CMP-04)
+### 5.3 M2: Lembretes (CMP-04)
 
 | Método | Rota | Ação | RF |
 | --- | --- | --- | --- |
@@ -142,7 +143,7 @@ Todas as rotas ficam sob `/api`, recebem e devolvem JSON, e todas, exceto as de 
 
 O envio (RF15) não tem rota: ele é feito pelo agendador (seção 6).
 
-### 5.4 M3 — Metas (CMP-05)
+### 5.4 M3: Metas (CMP-05)
 
 | Método | Rota | Ação | RF |
 | --- | --- | --- | --- |
@@ -153,7 +154,7 @@ O envio (RF15) não tem rota: ele é feito pelo agendador (seção 6).
 | POST | `/api/metas/<id>/tarefas/<tid>` | Vincula a tarefa; se ela já estiver em outra meta, responde 409 (RN07) | RF18 |
 | DELETE | `/api/metas/<id>/tarefas/<tid>` | Desvincula a tarefa | RF18 |
 
-### 5.5 M4 — Relatório semanal (CMP-06)
+### 5.5 M4: Relatório semanal (CMP-06)
 
 | Método | Rota | Ação | RF |
 | --- | --- | --- | --- |
@@ -248,7 +249,7 @@ O sistema tem nove entidades. Os campos, tipos, chaves e índices ficam no Model
 
 | Entidade | Pertence a | Relações principais | Regras |
 | --- | --- | --- | --- |
-| `usuario` | — | Tem etiquetas, tarefas, lembretes, metas e relatórios | RNF03, RNF04 |
+| `usuario` | Não se aplica | Tem etiquetas, tarefas, lembretes, metas e relatórios | RNF03, RNF04 |
 | `etiqueta` | usuário | Usada por várias tarefas; nome único por usuário | RN01 |
 | `tarefa` | usuário | Tem 1 etiqueta (obrigatória), 0 ou 1 meta, várias subtarefas, lembretes e remarcações | RN01 a RN04, RN07 |
 | `subtarefa` | tarefa | Excluída junto com a tarefa | RN05 |
@@ -264,14 +265,14 @@ O progresso da meta (RN06) não é gravado: ele é calculado a cada consulta. As
 
 | RNF | Como é atendido | Decisão ou componente |
 | --- | --- | --- |
-| RNF01 — Navegadores | HTML, CSS e JavaScript padrão, sem bibliotecas que exijam compilação | DA-01, CMP-09 |
-| RNF02 — Responsivo | Layout com CSS Flexbox/Grid e *media queries* para telas pequenas | CMP-09 |
-| RNF03 — Hash de senha | Senhas gravadas só como hash bcrypt; segredos fora do Git | DA-05, DA-10 |
-| RNF04 — Isolamento | Toda consulta filtra por `usuario_id`; recurso de outro usuário responde `404` | DA-06 |
-| RNF05 — Lembrete em até 5 min | Job verifica os lembretes a cada 1 minuto | DA-07, CMP-08 |
-| RNF06 — Lista em até 2 s | Índices em `tarefa(usuario_id, data_prevista)` e `tarefa(usuario_id, status)` | DA-04, DGD-BD-001 |
-| RNF07 — Localização | Textos em português; datas em UTC no banco, exibidas como dd/mm/aaaa no fuso America/Manaus | DA-09, CMP-09 |
-| RNF08 — Manutenibilidade | Serviços testáveis sem HTTP; pytest executado no GitHub Actions a cada pull request | DA-03, DGD-TST-001 |
+| RNF01: Navegadores | HTML, CSS e JavaScript padrão, sem bibliotecas que exijam compilação | DA-01, CMP-09 |
+| RNF02: Responsivo | Layout com CSS Flexbox/Grid e *media queries* para telas pequenas | CMP-09 |
+| RNF03: Hash de senha | Senhas gravadas só como hash bcrypt; segredos fora do Git | DA-05, DA-10 |
+| RNF04: Isolamento | Toda consulta filtra por `usuario_id`; recurso de outro usuário responde `404` | DA-06 |
+| RNF05: Lembrete em até 5 min | Job verifica os lembretes a cada 1 minuto | DA-07, CMP-08 |
+| RNF06: Lista em até 2 s | Índices em `tarefa(usuario_id, data_prevista)` e `tarefa(usuario_id, status)` | DA-04, DGD-BD-001 |
+| RNF07: Localização | Textos em português; datas em UTC no banco, exibidas como dd/mm/aaaa no fuso America/Manaus | DA-09, CMP-09 |
+| RNF08: Manutenibilidade | Serviços testáveis sem HTTP; pytest executado no GitHub Actions a cada pull request | DA-03, DGD-TST-001 |
 
 ## 9. Estrutura de pastas e execução
 
