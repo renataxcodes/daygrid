@@ -1,6 +1,6 @@
 # DGD-BD-001: Modelo de Dados do DayGrid
 
-Data: 18/11/2026
+Data: 19/11/2026
 
 ## 1. Identificação do documento
 
@@ -10,16 +10,17 @@ O banco do DayGrid tem 9 tabelas em MySQL 8.0 (InnoDB, `utf8mb4`). Todas, menos 
 | --- | --- |
 | ID do IC | DGD-BD-001 |
 | Título | Modelo de dados e scripts de migração |
-| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
+| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
 | Responsável | João Vitor Simonetti (DBA) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
 | Local no repositório | `database/migrations/` |
-| Documentos de base | DGD-REQ-001 (ERS) v1.1 · DGD-ARQ-001 (Arquitetura) v1.1 |
+| Documentos de base | DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-ARQ-001 (Arquitetura) v1.2 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a Arquitetura v1.2; sem mudança de conteúdo |
 | 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados (células vazias ficam em branco) e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4) |
@@ -442,4 +443,4 @@ CREATE TABLE relatorio_semanal (
 
 Nenhuma pendência: todas foram respondidas pela equipe em 18/11/2026.
 
-Observação: excluir a conta do usuário não está na ERS. Se entrar no escopo, o serviço precisa excluir as tarefas antes das etiquetas, por causa da chave RESTRICT de `tarefa.etiqueta_id`.
+Observação: excluir a conta do usuário não está no Documento de Requisitos. Se entrar no escopo, o serviço precisa excluir as tarefas antes das etiquetas, por causa da chave RESTRICT de `tarefa.etiqueta_id`.

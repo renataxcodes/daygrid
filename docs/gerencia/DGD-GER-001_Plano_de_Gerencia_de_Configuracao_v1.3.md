@@ -1,6 +1,6 @@
 # DGD-GER-001: Plano de Gerência de Configuração do DayGrid
 
-Data: 18/11/2026
+Data: 19/11/2026
 
 ## 1. Identificação do documento
 
@@ -11,7 +11,7 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 | ID do IC | DGD-GER-001 |
 | Título | Plano de Gerência de Configuração (PGC) |
 | Projeto | DayGrid (lista de afazeres diária) |
-| Versão | 1.2 (aprovada, baseline BL-PLAN, alterada pelas SM-001 e SM-002) |
+| Versão | 1.3 (aprovada, baseline BL-PLAN, alterada pelas SM-001, SM-002 e SM-003) |
 | Autor | Equipe DayGrid |
 | Aprovação | CCB do projeto (ATA-002, 18/11/2026) |
 | Norma de referência | IEEE 828: Configuration Management in Systems and Software Engineering |
@@ -20,6 +20,7 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.3 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): novos ICs DGD-GER-006 (Plano de Projeto) e DGD-REQ-003 (ERS); DGD-REQ-001 passa a se chamar Documento de Requisitos |
 | 1.2 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo |
 | 1.1 | 18/11/2026 | Equipe DayGrid | SM-001 (ATA-003): nova baseline BL-PROJ na seção 7; BL-IMPL passa a incluir as versões vigentes dos documentos técnicos |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-002); entra na baseline BL-PLAN |
@@ -65,8 +66,8 @@ A equipe tem quatro integrantes. Os papéis abaixo foram confirmados pela equipe
 
 | Integrante | Papel | Responsabilidades na GC |
 | --- | --- | --- |
-| Hugo Henry Lemos Carvalho | Gerente de Projeto e de Configuração | Mantém o PGC e a Lista de ICs, cria baselines e tags, conduz o CCB e as auditorias |
-| Renata Martins da Silva | Analista de Requisitos | Mantém a ERS e a Matriz de Rastreabilidade, faz a análise de impacto das SMs de requisitos |
+| Hugo Henry Lemos Carvalho | Gerente de Projeto e de Configuração | Mantém o Plano de Projeto, o PGC e a Lista de ICs, cria baselines e tags, conduz o CCB e as auditorias |
+| Renata Martins da Silva | Analista de Requisitos | Mantém o Documento de Requisitos, a ERS e a Matriz de Rastreabilidade, faz a análise de impacto das SMs de requisitos |
 | João Vitor Simonetti | Desenvolvedor full-stack, DBA e DevOps | Implementa front-end, back-end e banco, mantém o pipeline de CI e os scripts de migração |
 | Iago Medice Ferreira da Silva | Analista de Testes (QA) | Mantém o Plano e os Casos de Teste, executa os testes e fornece as evidências da auditoria funcional |
 
@@ -137,11 +138,13 @@ O inventário completo, com versão, responsável e status de cada item, fica na
 | --- | --- | --- |
 | DGD-GER-001 | Plano de Gerência de Configuração | Hugo |
 | DGD-GER-002 | Lista de Itens de Configuração | Hugo |
+| DGD-GER-006 | Plano de Projeto | Hugo Henry Lemos Carvalho |
 | DGD-GER-003 | Registro de SMs e Atas do CCB | Hugo |
 | DGD-GER-004 | Relatório de Status da Configuração | Hugo |
 | DGD-GER-005 | Relatório de Auditoria de Configuração | Hugo e Iago |
-| DGD-REQ-001 | Especificação de Requisitos de Software (ERS) | Renata |
+| DGD-REQ-001 | Documento de Requisitos | Renata |
 | DGD-REQ-002 | Matriz de Rastreabilidade | Renata |
+| DGD-REQ-003 | Especificação de Requisitos de Software (ERS) | Renata Martins da Silva; João Vitor Simonetti |
 | DGD-ARQ-001 | Documento de Arquitetura | João Vitor |
 | DGD-BD-001 | Modelo de dados e scripts de migração | João Vitor |
 | DGD-COD-001 | Código-fonte do front-end | João Vitor |
@@ -194,10 +197,10 @@ Cinco baselines levam o projeto até a entrega de 25/11/2026. O cronograma é cu
 
 | Baseline | Data prevista | ICs incluídos | Critério de aprovação |
 | --- | --- | --- | --- |
-| BL-PLAN | 19/11/2026 | DGD-GER-001, DGD-GER-002 | Papéis confirmados e PGC revisado pela equipe |
-| BL-REQ | 20/11/2026 | DGD-REQ-001, DGD-REQ-002 | ERS revisada e aprovada pelo CCB, cada RF com critério de aceitação |
-| BL-PROJ | 21/11/2026 | DGD-ARQ-001, DGD-BD-001, DGD-TST-001 | Documentos técnicos revisados pela equipe, consistentes com a BL-REQ e aprovados pelo CCB |
-| BL-IMPL | 24/11/2026 | DGD-COD-001, DGD-COD-002 e as versões vigentes de DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
+| BL-PLAN | 19/11/2026 | DGD-GER-001, DGD-GER-002, DGD-GER-006 | Papéis confirmados e PGC revisado pela equipe |
+| BL-REQ | 20/11/2026 | DGD-REQ-001, DGD-REQ-002 | Documento de Requisitos revisado e aprovado pelo CCB, cada RF com critério de aceitação |
+| BL-PROJ | 21/11/2026 | DGD-REQ-003, DGD-ARQ-001, DGD-BD-001, DGD-TST-001 | Documentos técnicos revisados pela equipe, consistentes com a BL-REQ e aprovados pelo CCB |
+| BL-IMPL | 24/11/2026 | DGD-COD-001, DGD-COD-002 e as versões vigentes de DGD-REQ-003, DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
 | BL-REL | 25/11/2026 | Todos os ICs + DGD-REL-001 | Auditorias FCA e PCA aprovadas; tag `v1.0.0` |
 
 Cada baseline gera uma tag em `main`, uma entrada no Relatório de Status e a versão `1.0` (ou superior) dos documentos incluídos.
@@ -248,7 +251,7 @@ O gerente de configuração atualiza o relatório a cada baseline e a cada SM fe
 
 | Auditoria | Quando | O que verifica | Responsáveis |
 | --- | --- | --- | --- |
-| Auditoria Funcional (FCA) | Antes da BL-REL, em 25/11/2026 | Cada RF da ERS tem caso de teste executado e aprovado, conforme a Matriz de Rastreabilidade | Iago e Renata |
+| Auditoria Funcional (FCA) | Antes da BL-REL, em 25/11/2026 | Cada RF do Documento de Requisitos tem caso de teste executado e aprovado, conforme a Matriz de Rastreabilidade | Iago e Renata |
 | Auditoria Física (PCA) | Antes da BL-REL, em 25/11/2026 | Os arquivos da tag `v1.0.0` correspondem aos ICs e versões da Lista de ICs; documentos aprovados estão em `docs/` | Hugo e João Vitor |
 
 Uma não conformidade encontrada na auditoria vira uma SM ou um bug. A BL-REL só é criada quando não há não conformidade de prioridade alta em aberto.

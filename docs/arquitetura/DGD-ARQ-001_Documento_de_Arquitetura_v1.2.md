@@ -1,6 +1,6 @@
 # DGD-ARQ-001: Documento de Arquitetura do DayGrid
 
-Data: 18/11/2026
+Data: 19/11/2026
 
 ## 1. Identificação do documento
 
@@ -10,15 +10,16 @@ O DayGrid é uma aplicação web em três camadas: um front-end estático em HTM
 | --- | --- |
 | ID do IC | DGD-ARQ-001 |
 | Título | Documento de Arquitetura |
-| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
+| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
 | Responsável | João Vitor Simonetti (Desenvolvedor full-stack, DBA e DevOps) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
-| Documentos de base | DGD-GER-001 (PGC) v1.2 · DGD-REQ-001 (ERS) v1.1 · DGD-REQ-002 (Matriz de Rastreabilidade) v1.0 · DGD-BD-001 (Modelo de Dados) v1.1 |
+| Documentos de base | DGD-GER-001 (PGC) v1.3 · DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-REQ-002 (Matriz de Rastreabilidade) v1.0 · DGD-BD-001 (Modelo de Dados) v1.2 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e o PGC v1.3; sem mudança de conteúdo |
 | 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: código do relatório alinhado à RN10 e ao DGD-BD-001 (6.2); recusa ao vincular tarefa a uma segunda meta (5.4); documentos de base atualizados |
@@ -41,7 +42,7 @@ Cada decisão abaixo recebe um ID (`DA-NN`). Depois da BL-IMPL, mudar uma delas 
 | ID | Decisão | Justificativa | Requisitos |
 | --- | --- | --- | --- |
 | DA-01 | O front-end é HTML/CSS/JS estático, servido pelo próprio Flask, e conversa com a API via `fetch` e JSON | Uma única origem dispensa configuração de CORS e mantém a stack que a equipe domina | RNF01, RNF02 |
-| DA-02 | O back-end é uma API REST em Flask, organizada em *blueprints*, um por módulo (M0 a M4) | Cada módulo da ERS vira um pacote independente, o que facilita a rastreabilidade | Todos os RF |
+| DA-02 | O back-end é uma API REST em Flask, organizada em *blueprints*, um por módulo (M0 a M4) | Cada módulo do Documento de Requisitos vira um pacote independente, o que facilita a rastreabilidade | Todos os RF |
 | DA-03 | O código tem três camadas: rotas → serviços → modelos | As regras de negócio (RN01 a RN10) ficam só nos serviços e podem ser testadas sem HTTP | RN01 a RN10, RNF08 |
 | DA-04 | O acesso ao banco usa SQLAlchemy (ORM) e Flask-Migrate (migrações versionadas) | As migrações viram o IC DGD-BD-001 e entram no Git | RNF08 |
 | DA-05 | A autenticação usa sessão com cookie (Flask-Login), e as senhas usam hash bcrypt (Flask-Bcrypt) | É suficiente para um sistema de origem única, e o bcrypt atende diretamente o RNF03 | RF01 a RF03, RNF03 |

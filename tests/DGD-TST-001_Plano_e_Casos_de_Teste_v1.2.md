@@ -1,25 +1,26 @@
 # DGD-TST-001: Plano e Casos de Teste do DayGrid
 
-Data: 18/11/2026
+Data: 19/11/2026
 
 ## 1. Identificação do documento
 
-Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos da ERS. O resultado deles é a evidência da Auditoria Funcional (FCA) antes da entrega de 25/11/2026.
+Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos do Documento de Requisitos. O resultado deles é a evidência da Auditoria Funcional (FCA) antes da entrega de 25/11/2026.
 
 | Campo | Valor |
 | --- | --- |
 | ID do IC | DGD-TST-001 |
 | Título | Plano e Casos de Teste |
-| Versão | 1.1 (aprovada, baseline BL-PROJ, alterada pela SM-002) |
+| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
 | Responsável | Iago Medice Ferreira da Silva (Analista de Testes) |
 | Baseline | BL-IMPL (prevista para 24/11/2026) |
 | Local no repositório | `tests/` |
-| Documentos de base | DGD-REQ-001 (ERS) v1.1 · DGD-ARQ-001 (Arquitetura) v1.1 · DGD-BD-001 (Modelo de Dados) v1.1 · DGD-REQ-002 (Matriz de Rastreabilidade) |
+| Documentos de base | DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-REQ-003 (ERS) v1.0 · DGD-ARQ-001 (Arquitetura) v1.2 · DGD-BD-001 (Modelo de Dados) v1.2 · DGD-REQ-002 (Matriz de Rastreabilidade) |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
+| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a ERS (DGD-REQ-003); sem mudança de conteúdo |
 | 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
 | 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
 | 0.2 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4, BD v0.4) |
@@ -64,7 +65,7 @@ Os testes seguem a separação em camadas da arquitetura (DA-03). Por isso, a ma
 
 | Critério | Condição |
 | --- | --- |
-| **Entrada** (pode começar a testar) | O código do módulo está em um pull request com o CI configurado; o banco de teste sobe pelas migrações; a ERS está na BL-REQ |
+| **Entrada** (pode começar a testar) | O código do módulo está em um pull request com o CI configurado; o banco de teste sobe pelas migrações; o Documento de Requisitos está na BL-REQ |
 | **Saída** (pode criar a BL-IMPL) | Todos os 44 casos foram executados; todos os casos de requisitos **Essenciais** foram aprovados; nenhum defeito de severidade Alta está aberto |
 | **Suspensão** (para de testar) | O banco de teste não sobe, o login (RF02) falha, ou o CI está quebrado em `main`. Os testes recomeçam quando o problema é corrigido |
 
@@ -234,7 +235,7 @@ A correção segue o fluxo normal de branch (`fix/<id-issue>-...`) e pull reques
 | --- | --- |
 | Iago Medice Ferreira da Silva | Mantém este plano, executa os casos manuais e registra os resultados na Matriz de Rastreabilidade |
 | João Vitor Simonetti | Escreve os testes automáticos com o código e mantém o CI |
-| Renata Martins da Silva | Confere se os resultados esperados correspondem à ERS e participa da FCA |
+| Renata Martins da Silva | Confere se os resultados esperados correspondem ao Documento de Requisitos e participa da FCA |
 | Hugo Henry Lemos Carvalho | Decide no CCB sobre defeitos de severidade Média e cria a BL-IMPL |
 
 ### 12.4 Registro dos resultados

@@ -6,7 +6,7 @@ labels: CR
 ---
 
 ## Solicitante e data
-<nome> — <dd/mm/aaaa>
+<nome>, <dd/mm/aaaa>
 
 ## Descrição
 <o que deve mudar>
