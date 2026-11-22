@@ -1,0 +1,17 @@
+flowchart TB
+  NAV["<b>Navegador</b><br>HTML/CSS/JS · CMP-09"]
+  subgraph SRV["Servidor Flask · um único processo (DA-07)"]
+    direction TB
+    ROT["<b>Rotas /api</b><br>CMP-01 a CMP-06"]
+    AG["<b>Agendador</b><br>APScheduler · CMP-08"]
+    SV["<b>Serviços</b><br>regras RN01 a RN10"]
+    MOD["<b>Modelos</b><br>SQLAlchemy"]
+    EM["<b>EmailService</b><br>Flask-Mail · CMP-07"]
+  end
+  DB[("<b>MySQL</b><br>migrações DGD-BD-001")]
+  SMTP["<b>Servidor SMTP</b><br>provedor de e-mail"]
+  MAIL["<b>E-mail do usuário</b><br>lembretes e senha"]
+  NAV --> ROT --> SV
+  AG --> SV
+  SV --> MOD --> DB
+  SV --> EM --> SMTP --> MAIL

@@ -1,18 +1,17 @@
 # DGD-TST-001: Plano e Casos de Teste do DayGrid
 
-Data: 19/11/2026
-
 ## 1. Identificação do documento
 
-Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos do Documento de Requisitos. O resultado deles é a evidência da Auditoria Funcional (FCA) antes da entrega de 25/11/2026.
+Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos do Documento de Requisitos. Eles serão executados na fase de implementação, depois da entrega da documentação de 25/11/2026, e o resultado será a evidência da Auditoria Funcional (FCA).
 
 | Campo | Valor |
 | --- | --- |
 | ID do IC | DGD-TST-001 |
 | Título | Plano e Casos de Teste |
-| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
+| Versão | 1.3 (aprovada, baseline BL-PROJ, alterada pelas SM-002, SM-003 e SM-004) |
+| Data | 22/11/2026 |
 | Responsável | Iago Medice Ferreira da Silva (Analista de Testes) |
-| Baseline | BL-IMPL (prevista para 24/11/2026) |
+| Baseline | BL-PROJ (criada em 03/11/2026) |
 | Local no repositório | `tests/` |
 | Documentos de base | DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-REQ-003 (ERS) v1.0 · DGD-ARQ-001 (Arquitetura) v1.2 · DGD-BD-001 (Modelo de Dados) v1.2 · DGD-REQ-002 (Matriz de Rastreabilidade) |
 
@@ -20,11 +19,12 @@ Este plano tem 44 casos de teste (CT-01 a CT-44) que cobrem os 33 requisitos do 
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
-| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a ERS (DGD-REQ-003); sem mudança de conteúdo |
-| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
-| 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
-| 0.2 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4, BD v0.4) |
-| 0.1 | 18/11/2026 | Equipe DayGrid | Criação: 44 casos de teste |
+| 1.3 | 22/11/2026 | Equipe DayGrid | SM-004 (ATA-006): campo Baseline corrigido para BL-PROJ; sem mudança de conteúdo |
+| 1.2 | 17/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a ERS (DGD-REQ-003); sem mudança de conteúdo |
+| 1.1 | 10/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
+| 1.0 | 03/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
+| 0.2 | 20/10/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4, BD v0.4) |
+| 0.1 | 29/09/2026 | Equipe DayGrid | Criação: 44 casos de teste |
 
 ## 2. Estratégia
 
@@ -224,10 +224,8 @@ A correção segue o fluxo normal de branch (`fix/<id-issue>-...`) e pull reques
 
 | Período | Atividade |
 | --- | --- |
-| 19/11 a 23/11/2026 | Testes unitários e de integração escritos junto com o código, executados no CI a cada pull request |
-| 23/11/2026 | Casos manuais (CT-29 e CT-40 a CT-44) |
-| 24/11/2026 | Reteste dos defeitos corrigidos e execução completa; criação da BL-IMPL |
-| 25/11/2026 | Auditoria Funcional (FCA) a partir da Matriz de Rastreabilidade; BL-REL |
+| Fase de implementação | Testes unitários e de integração escritos junto com o código e executados no CI; casos manuais (CT-29 e CT-40 a CT-44); reteste dos defeitos corrigidos e criação da BL-IMPL |
+| Depois da BL-IMPL | Auditoria Funcional (FCA) a partir da Matriz de Rastreabilidade |
 
 ### 12.3 Responsabilidades
 

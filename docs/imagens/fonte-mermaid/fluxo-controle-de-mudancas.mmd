@@ -1,0 +1,6 @@
+flowchart TB
+  A["Abrir SM (issue CR)"] --> B["Análise de impacto"] --> C{"CCB aprova?"}
+  C -->|não| R["Rejeitar e fechar"]
+  C -->|sim| D["Implementar no branch"]
+  D --> V["Verificar com testes"]
+  V -->|testes passam| N["Nova versão e tag"]

@@ -1,0 +1,12 @@
+flowchart TB
+  U(["Usuário"])
+  A(["Agendador do sistema"])
+  U --- UC1(("UC1<br>Manter<br>conta"))
+  U --- UC2(("UC2<br>Manter<br>tarefas"))
+  U --- UC3(("UC3<br>Manter<br>subtarefas"))
+  U --- UC4(("UC4<br>Manter<br>etiquetas"))
+  U --- UC5(("UC5<br>Manter<br>lembretes"))
+  U --- UC7(("UC7<br>Manter<br>metas"))
+  U --- UC9(("UC9<br>Consultar<br>relatórios"))
+  A --- UC6(("UC6<br>Enviar<br>lembretes"))
+  A --- UC8(("UC8<br>Gerar relatório<br>semanal"))

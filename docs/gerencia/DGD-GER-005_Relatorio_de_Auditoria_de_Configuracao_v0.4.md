@@ -1,34 +1,34 @@
 # DGD-GER-005: Relatório de Auditoria de Configuração do DayGrid
 
-Data: 19/11/2026
-
 ## 1. Identificação do documento
 
-As duas auditorias acontecem em 25/11/2026, antes da BL-REL. Este documento traz os roteiros, prontos para preencher. Os resultados ainda não foram registrados, porque as auditorias não foram executadas.
+A auditoria física (PCA) acontece em 22/11/2026, depois da ATA-006 e antes da BL-REL. A auditoria funcional (FCA) depende do software e fica para a fase de implementação, depois da BL-IMPL. Este documento traz os roteiros, prontos para preencher. Os resultados ainda não foram registrados, porque as auditorias não foram executadas.
 
 | Campo | Valor |
 | --- | --- |
 | ID do IC | DGD-GER-005 |
 | Título | Relatório de Auditoria de Configuração |
-| Versão | 0.3 (rascunho) |
+| Versão | 0.4 (rascunho) |
+| Data | 22/11/2026 |
 | Responsáveis | Hugo Henry Lemos Carvalho e Iago Medice Ferreira da Silva |
-| Baseline | BL-REL (prevista para 25/11/2026) |
-| Base | DGD-GER-001 (PGC) v1.3, seção 9.2; DGD-REQ-002 (Matriz) v1.0; DGD-TST-001 (Plano de Testes) v1.2 |
+| Baseline | BL-REL (prevista para 22/11/2026) |
+| Base | DGD-GER-001 (PGC) v1.3, seção 9.2; DGD-REQ-002 (Matriz) v1.1; DGD-TST-001 (Plano de Testes) v1.3 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
-| 0.3 | 19/11/2026 | Equipe DayGrid | Consolidação: travessões retirados, bases atualizadas (PGC v1.3, Plano de Testes v1.2) e PCA-04 com todos os locais da Lista de ICs |
-| 0.2 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: base atualizada (PGC v1.0) |
-| 0.1 | 18/11/2026 | Equipe DayGrid | Criação dos roteiros da FCA e da PCA |
+| 0.4 | 22/11/2026 | Equipe DayGrid | Bases atualizadas depois da SM-004 (Matriz v1.1, Plano de Testes v1.3) |
+| 0.3 | 18/11/2026 | Equipe DayGrid | Consolidação: travessões retirados, bases atualizadas (PGC v1.3, Plano de Testes v1.2) e PCA-04 com todos os locais da Lista de ICs |
+| 0.2 | 13/10/2026 | Equipe DayGrid | Revisão de consistência: base atualizada (PGC v1.0) |
+| 0.1 | 01/10/2026 | Equipe DayGrid | Criação dos roteiros da FCA e da PCA |
 
 ## 2. Escopo, data e auditores
 
 | Auditoria | Pergunta que responde | Data | Auditores | Fonte das evidências |
 | --- | --- | --- | --- | --- |
-| FCA (Funcional) | O software faz o que o Documento de Requisitos e a ERS pedem? | 25/11/2026 | Iago e Renata | Matriz de Rastreabilidade, resultados do pytest no CI e evidências dos casos manuais |
-| PCA (Física) | O que será entregue corresponde exatamente aos ICs e às versões registradas? | 25/11/2026 | Hugo e João Vitor | Lista de ICs, repositório na tag `v1.0.0` e documentos em `docs/` |
+| FCA (Funcional) | O software faz o que o Documento de Requisitos e a ERS pedem? | Fase de implementação | Iago e Renata | Matriz de Rastreabilidade, resultados do pytest no CI e evidências dos casos manuais |
+| PCA (Física) | O que será entregue corresponde exatamente aos ICs e às versões registradas? | 22/11/2026 | Hugo e João Vitor | Lista de ICs, repositório na tag `v1.0.0` e documentos em `docs/` |
 
 Cada item dos roteiros recebe um resultado: **Conforme**, **Não conforme** ou **Não se aplica**. Todo item Não conforme vira uma linha na seção 5.
 
@@ -54,7 +54,7 @@ Cada item dos roteiros recebe um resultado: **Conforme**, **Não conforme** ou *
 | PCA-03 | A versão de cada documento é a mesma na Lista de ICs e no próprio documento | Comparar a coluna "Versão" com a tabela de identificação de cada documento | A executar |  |
 | PCA-04 | Os documentos aprovados estão nos locais da Lista de ICs, na versão 1.0 ou superior | Abrir cada arquivo em `docs/gerencia/`, `docs/requisitos/`, `docs/arquitetura/`, `database/migrations/` e `tests/` | A executar |  |
 | PCA-05 | O `.env` não está no repositório, e o `.env.example` está, sem valores secretos | Procurar `.env` no histórico do Git | A executar |  |
-| PCA-06 | O banco pode ser criado do zero pelas migrações | `flask db upgrade` em um banco vazio | A executar |  |
+| PCA-06 | O banco pode ser criado do zero pelas migrações | `flask db upgrade` em um banco vazio | Não se aplica nesta entrega (fase de implementação) |  |
 | PCA-07 | O CHANGELOG tem a entrada da `v1.0.0`, com as SMs incluídas | Abrir o `CHANGELOG.md` | A executar |  |
 | PCA-08 | Toda SM fechada aparece no Registro de SMs com decisão do CCB | Comparar as issues `CR` fechadas com o DGD-GER-003 | A executar |  |
 | PCA-09 | Os commits seguem o padrão do PGC (Conventional Commits com o número da issue) | `git log --oneline` na tag | A executar |  |

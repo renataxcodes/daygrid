@@ -1,20 +1,27 @@
 # DOCUMENTO DE REQUISITOS: DayGrid
 
-Item de configuração DGD-REQ-001, versão 1.2, baseline BL-REQ (alterada pelas SM-002 e SM-003). Responsável: Renata Martins da Silva (Analista de Requisitos). Aprovação: CCB do projeto (ATA-002, de 18/11/2026; ATA-005, de 19/11/2026).
+| Campo | Valor |
+| --- | --- |
+| ID do IC | DGD-REQ-001 |
+| Título | Documento de Requisitos |
+| Versão | 1.2 |
+| Baseline | BL-REQ (alterada pelas SM-002 e SM-003) |
+| Responsável | Renata Martins da Silva (Analista de Requisitos) |
+| Aprovação | CCB do projeto (ATA-002, de 06/10/2026; ATA-005, de 17/11/2026) |
 
 | Data | Versão | Descrição | Responsável |
 | --- | --- | --- | --- |
-| 19/11/2026 | 1.2 | SM-003 (ATA-005): documento reorganizado no template da disciplina e renomeado de "Especificação de Requisitos de Software" para "Documento de Requisitos"; critérios de aceitação incorporados à descrição dos RF; colunas "Depende de" e prioridade de RNF e RN incluídas | Renata Martins da Silva |
-| 18/11/2026 | 1.1 | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo | Renata Martins da Silva |
-| 18/11/2026 | 1.0 | Aprovada pelo CCB (ATA-002); entra na baseline BL-REQ | Renata Martins da Silva |
-| 18/11/2026 | 0.8 | Troca de meta exige desvincular antes (RN07 e RF18), conforme ATA-001, decisão 20 | Renata Martins da Silva |
-| 18/11/2026 | 0.7 | Link de redefinição passa a valer 15 minutos (RF04); data prevista obrigatória na tarefa (RF05) | Renata Martins da Silva |
-| 18/11/2026 | 0.6 | Validade do link de redefinição (RF04); tarefa remarcada e concluída na semana conta como concluída (RN10) | Renata Martins da Silva |
-| 18/11/2026 | 0.5 | Respondidas as últimas questões em aberto (RN05, RN08, RN09, RN10 e RF21) | Renata Martins da Silva |
-| 18/11/2026 | 0.4 | Etiqueta passa a ser obrigatória em toda tarefa (RN01 e RF05) | Renata Martins da Silva |
-| 18/11/2026 | 0.3 | Definido o que acontece ao excluir uma etiqueta em uso (RN01 e RF25) | Renata Martins da Silva |
-| 18/11/2026 | 0.2 | Etiquetas personalizáveis (RN01 alterada, RF25 incluído); valores dos RNF confirmados pela equipe | Renata Martins da Silva |
-| 18/11/2026 | 0.1 | Criação a partir do escopo aprovado pela equipe | Renata Martins da Silva |
+| 17/11/2026 | 1.2 | SM-003 (ATA-005): documento reorganizado no template da disciplina e renomeado de "Especificação de Requisitos de Software" para "Documento de Requisitos"; critérios de aceitação incorporados à descrição dos RF; colunas "Depende de" e prioridade de RNF e RN incluídas | Renata Martins da Silva |
+| 10/11/2026 | 1.1 | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo | Renata Martins da Silva |
+| 06/10/2026 | 1.0 | Aprovada pelo CCB (ATA-002); entra na baseline BL-REQ | Renata Martins da Silva |
+| 02/10/2026 | 0.8 | Troca de meta exige desvincular antes (RN07 e RF18), conforme ATA-001, decisão 20 | Renata Martins da Silva |
+| 28/09/2026 | 0.7 | Link de redefinição passa a valer 15 minutos (RF04); data prevista obrigatória na tarefa (RF05) | Renata Martins da Silva |
+| 25/09/2026 | 0.6 | Validade do link de redefinição (RF04); tarefa remarcada e concluída na semana conta como concluída (RN10) | Renata Martins da Silva |
+| 17/09/2026 | 0.5 | Respondidas as últimas questões em aberto (RN05, RN08, RN09, RN10 e RF21) | Renata Martins da Silva |
+| 16/09/2026 | 0.4 | Etiqueta passa a ser obrigatória em toda tarefa (RN01 e RF05) | Renata Martins da Silva |
+| 15/09/2026 | 0.3 | Definido o que acontece ao excluir uma etiqueta em uso (RN01 e RF25) | Renata Martins da Silva |
+| 11/09/2026 | 0.2 | Etiquetas personalizáveis (RN01 alterada, RF25 incluído); valores dos RNF confirmados pela equipe | Renata Martins da Silva |
+| 08/09/2026 | 0.1 | Criação a partir do escopo aprovado pela equipe | Renata Martins da Silva |
 
 ## 1. Introdução
 
@@ -54,7 +61,7 @@ O sistema tem um único perfil de usuário, o usuário cadastrado, que gerencia 
 
 O usuário cria tarefas do dia, organiza-as por etiqueta, prioridade e status, divide-as em subtarefas e as vincula a metas, que mostram uma barra de progresso calculada automaticamente. Os lembretes chegam por e-mail no horário definido. Todo domingo, o sistema gera um relatório com o percentual de tarefas concluídas e adiadas, os dias mais produtivos e o progresso das metas.
 
-Restrições: entrega final em 25/11/2026; stack definida no PGC (HTML, CSS e JavaScript, Python com Flask e MySQL).
+Restrições: entrega da documentação em 25/11/2026; stack definida no PGC (HTML, CSS e JavaScript, Python com Flask e MySQL).
 
 Premissas: o sistema tem acesso a um servidor SMTP para enviar e-mails, e o servidor fica ligado continuamente, para que o agendador dispare lembretes e relatórios.
 
@@ -90,7 +97,7 @@ Premissas: o sistema tem acesso a um servidor SMTP para enviar e-mails, e o serv
 
 ## 5. Requisitos Não Funcionais (RNF)
 
-Os valores numéricos abaixo foram confirmados pela equipe em 18/11/2026.
+Os valores numéricos abaixo foram confirmados pela equipe em 11/09/2026.
 
 | ID | Descrição | Prioridade | Depende de |
 | --- | --- | --- | --- |
@@ -105,7 +112,7 @@ Os valores numéricos abaixo foram confirmados pela equipe em 18/11/2026.
 
 ## 6. Regras de Negócio
 
-As regras abaixo registram as decisões tomadas pela equipe em 18/11/2026 para os pontos do escopo que estavam ambíguos. A prioridade de cada regra é a do requisito de maior prioridade que a aplica. Os requisitos que aplicam cada regra aparecem na coluna "Depende de" da seção 4 e na Matriz de Rastreabilidade (DGD-REQ-002).
+As regras abaixo registram as decisões tomadas pela equipe entre 08/09/2026 e 02/10/2026 para os pontos do escopo que estavam ambíguos. A prioridade de cada regra é a do requisito de maior prioridade que a aplica. Os requisitos que aplicam cada regra aparecem na coluna "Depende de" da seção 4 e na Matriz de Rastreabilidade (DGD-REQ-002).
 
 | ID | Descrição | Prioridade | Depende de |
 | --- | --- | --- | --- |

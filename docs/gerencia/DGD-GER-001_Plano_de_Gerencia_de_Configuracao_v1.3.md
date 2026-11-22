@@ -1,7 +1,5 @@
 # DGD-GER-001: Plano de Gerência de Configuração do DayGrid
 
-Data: 19/11/2026
-
 ## 1. Identificação do documento
 
 Este plano define como o projeto DayGrid identifica, controla, registra e audita seus itens de configuração até a entrega de 25/11/2026.
@@ -12,21 +10,22 @@ Este plano define como o projeto DayGrid identifica, controla, registra e audita
 | Título | Plano de Gerência de Configuração (PGC) |
 | Projeto | DayGrid (lista de afazeres diária) |
 | Versão | 1.3 (aprovada, baseline BL-PLAN, alterada pelas SM-001, SM-002 e SM-003) |
+| Data | 17/11/2026 |
 | Autor | Equipe DayGrid |
-| Aprovação | CCB do projeto (ATA-002, 18/11/2026) |
+| Aprovação | CCB do projeto (ATA-002, 06/10/2026) |
 | Norma de referência | IEEE 828: Configuration Management in Systems and Software Engineering |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
-| 1.3 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): novos ICs DGD-GER-006 (Plano de Projeto) e DGD-REQ-003 (ERS); DGD-REQ-001 passa a se chamar Documento de Requisitos |
-| 1.2 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo |
-| 1.1 | 18/11/2026 | Equipe DayGrid | SM-001 (ATA-003): nova baseline BL-PROJ na seção 7; BL-IMPL passa a incluir as versões vigentes dos documentos técnicos |
-| 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-002); entra na baseline BL-PLAN |
-| 0.3 | 18/11/2026 | Equipe DayGrid | Horário do relatório semanal alinhado à ERS v0.5 (domingo às 23h59) |
-| 0.2 | 18/11/2026 | Equipe DayGrid | Papéis e stack confirmados pela equipe; etiquetas passam a ser personalizáveis |
-| 0.1 | 18/11/2026 | Equipe DayGrid | Criação do documento |
+| 1.3 | 17/11/2026 | Equipe DayGrid | SM-003 (ATA-005): novos ICs DGD-GER-006 (Plano de Projeto) e DGD-REQ-003 (ERS); DGD-REQ-001 passa a se chamar Documento de Requisitos |
+| 1.2 | 10/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; sem mudança de conteúdo |
+| 1.1 | 03/11/2026 | Equipe DayGrid | SM-001 (ATA-003): nova baseline BL-PROJ na seção 7; BL-IMPL passa a incluir as versões vigentes dos documentos técnicos |
+| 1.0 | 06/10/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-002); entra na baseline BL-PLAN |
+| 0.3 | 18/09/2026 | Equipe DayGrid | Horário do relatório semanal alinhado à ERS v0.5 (domingo às 23h59) |
+| 0.2 | 10/09/2026 | Equipe DayGrid | Papéis e stack confirmados pela equipe; etiquetas passam a ser personalizáveis |
+| 0.1 | 08/09/2026 | Equipe DayGrid | Criação do documento |
 
 ## 2. Introdução
 
@@ -48,7 +47,7 @@ O DayGrid é uma aplicação web de lista de afazeres diária. Ele permite que o
 
 ### 2.3 Escopo da GC
 
-Este plano cobre documentos de gerência, requisitos, arquitetura, código-fonte, scripts de banco, testes e releases. Ele vale do início do projeto (18/11/2026) até a entrega final (25/11/2026).
+Este plano cobre documentos de gerência, requisitos, arquitetura, código-fonte, scripts de banco, testes e releases. Ele vale do início do projeto (08/09/2026) até a entrega final (25/11/2026).
 
 ### 2.4 Termos
 
@@ -62,14 +61,14 @@ Este plano cobre documentos de gerência, requisitos, arquitetura, código-fonte
 
 ## 3. Organização e responsabilidades
 
-A equipe tem quatro integrantes. Os papéis abaixo foram confirmados pela equipe em 18/11/2026.
+A equipe tem quatro integrantes. Os papéis abaixo foram confirmados pela equipe em 10/09/2026.
 
 | Integrante | Papel | Responsabilidades na GC |
 | --- | --- | --- |
 | Hugo Henry Lemos Carvalho | Gerente de Projeto e de Configuração | Mantém o Plano de Projeto, o PGC e a Lista de ICs, cria baselines e tags, conduz o CCB e as auditorias |
 | Renata Martins da Silva | Analista de Requisitos | Mantém o Documento de Requisitos, a ERS e a Matriz de Rastreabilidade, faz a análise de impacto das SMs de requisitos |
-| João Vitor Simonetti | Desenvolvedor full-stack, DBA e DevOps | Implementa front-end, back-end e banco, mantém o pipeline de CI e os scripts de migração |
-| Iago Medice Ferreira da Silva | Analista de Testes (QA) | Mantém o Plano e os Casos de Teste, executa os testes e fornece as evidências da auditoria funcional |
+| João Vitor Simonetti | Desenvolvedor full-stack, DBA e DevOps | Mantém a Arquitetura e o Modelo de Dados; na fase de implementação, implementa front-end, back-end e banco e mantém o CI e as migrações |
+| Iago Medice Ferreira da Silva | Analista de Testes (QA) | Mantém o Plano e os Casos de Teste; na fase de implementação, executa os testes e fornece as evidências da auditoria funcional |
 
 ### 3.1 Comitê de Controle de Configuração (CCB)
 
@@ -80,7 +79,7 @@ A equipe tem quatro integrantes. Os papéis abaixo foram confirmados pela equipe
 
 ## 4. Ferramentas e ambiente
 
-A stack, confirmada pela equipe em 18/11/2026, parte do que a equipe já domina: uma aplicação web com back-end em Python/Flask e banco MySQL.
+A stack, confirmada pela equipe em 10/09/2026, parte do que a equipe já domina: uma aplicação web com back-end em Python/Flask e banco MySQL.
 
 | Finalidade | Ferramenta |
 | --- | --- |
@@ -193,15 +192,15 @@ Toda baseline e toda release recebem uma tag anotada em `main`, com o mesmo nome
 
 ## 7. Baselines planejadas
 
-Cinco baselines levam o projeto até a entrega de 25/11/2026. O cronograma é curto (7 dias), por isso cada baseline depende da aprovação da anterior. A BL-PROJ foi incluída pela SM-001 (ATA-003) para congelar os documentos técnicos antes do código.
+Cinco baselines estão planejadas. A entrega de 25/11/2026 é da documentação do sistema e fecha com a BL-REL. A BL-IMPL, com o código, fica para a fase de implementação, depois dessa entrega. A BL-PROJ foi incluída pela SM-001 (ATA-003) para congelar os documentos técnicos antes do código.
 
 | Baseline | Data prevista | ICs incluídos | Critério de aprovação |
 | --- | --- | --- | --- |
-| BL-PLAN | 19/11/2026 | DGD-GER-001, DGD-GER-002, DGD-GER-006 | Papéis confirmados e PGC revisado pela equipe |
-| BL-REQ | 20/11/2026 | DGD-REQ-001, DGD-REQ-002 | Documento de Requisitos revisado e aprovado pelo CCB, cada RF com critério de aceitação |
-| BL-PROJ | 21/11/2026 | DGD-REQ-003, DGD-ARQ-001, DGD-BD-001, DGD-TST-001 | Documentos técnicos revisados pela equipe, consistentes com a BL-REQ e aprovados pelo CCB |
-| BL-IMPL | 24/11/2026 | DGD-COD-001, DGD-COD-002 e as versões vigentes de DGD-REQ-003, DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
-| BL-REL | 25/11/2026 | Todos os ICs + DGD-REL-001 | Auditorias FCA e PCA aprovadas; tag `v1.0.0` |
+| BL-PLAN | 06/10/2026 | DGD-GER-001, DGD-GER-002, DGD-GER-006 | Papéis confirmados e PGC revisado pela equipe |
+| BL-REQ | 06/10/2026 | DGD-REQ-001, DGD-REQ-002 | Documento de Requisitos revisado e aprovado pelo CCB, cada RF com critério de aceitação |
+| BL-PROJ | 03/11/2026 | DGD-REQ-003, DGD-ARQ-001, DGD-BD-001, DGD-TST-001 | Documentos técnicos revisados pela equipe, consistentes com a BL-REQ e aprovados pelo CCB |
+| BL-IMPL | Fase de implementação (depois da entrega) | DGD-COD-001, DGD-COD-002 e as versões vigentes de DGD-REQ-003, DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 | CI verde, testes de RF passando e rastreabilidade atualizada |
+| BL-REL | 22/11/2026 | Todos os ICs de documentação + DGD-REL-001 | Auditoria física (PCA) aprovada; tag `v1.0.0` |
 
 Cada baseline gera uma tag em `main`, uma entrada no Relatório de Status e a versão `1.0` (ou superior) dos documentos incluídos.
 
@@ -251,8 +250,8 @@ O gerente de configuração atualiza o relatório a cada baseline e a cada SM fe
 
 | Auditoria | Quando | O que verifica | Responsáveis |
 | --- | --- | --- | --- |
-| Auditoria Funcional (FCA) | Antes da BL-REL, em 25/11/2026 | Cada RF do Documento de Requisitos tem caso de teste executado e aprovado, conforme a Matriz de Rastreabilidade | Iago e Renata |
-| Auditoria Física (PCA) | Antes da BL-REL, em 25/11/2026 | Os arquivos da tag `v1.0.0` correspondem aos ICs e versões da Lista de ICs; documentos aprovados estão em `docs/` | Hugo e João Vitor |
+| Auditoria Funcional (FCA) | Na fase de implementação, depois da BL-IMPL | Cada RF do Documento de Requisitos tem caso de teste executado e aprovado, conforme a Matriz de Rastreabilidade | Iago e Renata |
+| Auditoria Física (PCA) | Antes da BL-REL, em 22/11/2026 | Os arquivos da tag `v1.0.0` correspondem aos ICs e versões da Lista de ICs; documentos aprovados estão em `docs/` | Hugo e João Vitor |
 
 Uma não conformidade encontrada na auditoria vira uma SM ou um bug. A BL-REL só é criada quando não há não conformidade de prioridade alta em aberto.
 

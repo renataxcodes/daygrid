@@ -1,0 +1,75 @@
+classDiagram
+  class Usuario {
+    +id
+    +nome
+    +email
+    +senha_hash
+    +criado_em
+  }
+  class Etiqueta {
+    +id
+    +nome
+  }
+  class Tarefa {
+    +id
+    +titulo
+    +descricao
+    +data_prevista
+    +prioridade
+    +status
+    +concluida_em
+    +concluida_ate(fim)
+  }
+  class Subtarefa {
+    +id
+    +titulo
+    +concluida
+  }
+  class Remarcacao {
+    +id
+    +data_anterior
+    +data_nova
+    +remarcada_em
+  }
+  class Lembrete {
+    +id
+    +titulo
+    +recorrencia
+    +proximo_envio
+    +dia_referencia
+    +ativo
+    +ultimo_envio
+  }
+  class Meta {
+    +id
+    +titulo
+    +descricao
+    +prazo
+    +progresso()
+  }
+  class RelatorioSemanal {
+    +id
+    +semana_inicio
+    +semana_fim
+    +pct_concluidas
+    +pct_adiadas
+    +dias_produtivos
+    +progresso_metas
+  }
+  class TokenRedefinicao {
+    +id
+    +token_hash
+    +expira_em
+    +usado_em
+  }
+  Usuario "1" --> "*" Etiqueta
+  Usuario "1" --> "*" Tarefa
+  Usuario "1" --> "*" Lembrete
+  Usuario "1" --> "*" Meta
+  Usuario "1" --> "*" RelatorioSemanal
+  Usuario "1" --> "*" TokenRedefinicao
+  Etiqueta "1" --> "*" Tarefa
+  Meta "0..1" --> "*" Tarefa
+  Tarefa "1" *-- "*" Subtarefa
+  Tarefa "1" *-- "*" Remarcacao
+  Tarefa "0..1" --> "*" Lembrete

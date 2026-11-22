@@ -1,0 +1,20 @@
+flowchart TB
+  subgraph Navegador
+    FE["frontend: telas em HTML, CSS e JavaScript"]
+  end
+  subgraph Servidor["Servidor Flask em processo único"]
+    R["routes: auth, tarefas, etiquetas, lembretes, metas, relatorios"]
+    J["scheduler: jobs de lembretes e de relatório"]
+    S["services: regras de negócio RN01 a RN10"]
+    E["EmailService"]
+    M["models: classes SQLAlchemy"]
+  end
+  DB[("MySQL: 9 tabelas")]
+  SMTP["SMTP do Gmail"]
+  FE -->|JSON via fetch| R
+  R --> S
+  J --> S
+  S --> M
+  S --> E
+  M --> DB
+  E --> SMTP

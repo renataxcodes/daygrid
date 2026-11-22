@@ -1,0 +1,21 @@
+flowchart TB
+  U["<b>usuario</b><br>e-mail único"]
+  TK["<b>token_redefinicao</b><br>token_hash único"]
+  RS["<b>relatorio_semanal</b><br>um por semana"]
+  ME["<b>meta</b><br>prazo obrigatório"]
+  T["<b>tarefa</b><br>etiqueta obrigatória"]
+  L["<b>lembrete</b><br>tarefa opcional"]
+  ET["<b>etiqueta</b><br>nome único por usuário"]
+  ST["<b>subtarefa</b><br>não conta em metas"]
+  RM["<b>remarcacao</b><br>só para data posterior"]
+  U --> TK
+  U --> RS
+  U --> ME
+  U --> T
+  U --> L
+  U --> ET
+  ET --> T
+  ME -->|0..1| T
+  T -->|0..1| L
+  T --> ST
+  T --> RM

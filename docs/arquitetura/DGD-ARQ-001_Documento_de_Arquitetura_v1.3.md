@@ -1,7 +1,5 @@
 # DGD-ARQ-001: Documento de Arquitetura do DayGrid
 
-Data: 19/11/2026
-
 ## 1. Identificação do documento
 
 O DayGrid é uma aplicação web em três camadas: um front-end estático em HTML/CSS/JS, uma API REST em Flask e um banco MySQL, com um agendador interno para os lembretes e para o relatório semanal.
@@ -10,22 +8,24 @@ O DayGrid é uma aplicação web em três camadas: um front-end estático em HTM
 | --- | --- |
 | ID do IC | DGD-ARQ-001 |
 | Título | Documento de Arquitetura |
-| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
+| Versão | 1.3 (aprovada, baseline BL-PROJ, alterada pelas SM-002, SM-003 e SM-004) |
+| Data | 22/11/2026 |
 | Responsável | João Vitor Simonetti (Desenvolvedor full-stack, DBA e DevOps) |
-| Baseline | BL-IMPL (prevista para 24/11/2026) |
+| Baseline | BL-PROJ (criada em 03/11/2026) |
 | Documentos de base | DGD-GER-001 (PGC) v1.3 · DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-REQ-002 (Matriz de Rastreabilidade) v1.0 · DGD-BD-001 (Modelo de Dados) v1.2 |
 
 ### Histórico de revisões
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
-| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e o PGC v1.3; sem mudança de conteúdo |
-| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
-| 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
-| 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: código do relatório alinhado à RN10 e ao DGD-BD-001 (6.2); recusa ao vincular tarefa a uma segunda meta (5.4); documentos de base atualizados |
-| 0.3 | 18/11/2026 | Equipe DayGrid | Entidade `remarcacao` incluída (seção 7), alinhada ao DGD-BD-001 v0.1 |
-| 0.2 | 18/11/2026 | Equipe DayGrid | Gmail definido como provedor de SMTP (DA-08 e seção 9) |
-| 0.1 | 18/11/2026 | Equipe DayGrid | Criação a partir da ERS v0.5 |
+| 1.3 | 22/11/2026 | Equipe DayGrid | SM-004 (ATA-006): campo Baseline corrigido para BL-PROJ; sem mudança de conteúdo |
+| 1.2 | 17/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e o PGC v1.3; sem mudança de conteúdo |
+| 1.1 | 10/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
+| 1.0 | 03/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
+| 0.4 | 20/10/2026 | Equipe DayGrid | Revisão de consistência: código do relatório alinhado à RN10 e ao DGD-BD-001 (6.2); recusa ao vincular tarefa a uma segunda meta (5.4); documentos de base atualizados |
+| 0.3 | 24/09/2026 | Equipe DayGrid | Entidade `remarcacao` incluída (seção 7), alinhada ao DGD-BD-001 v0.1 |
+| 0.2 | 22/09/2026 | Equipe DayGrid | Gmail definido como provedor de SMTP (DA-08 e seção 9) |
+| 0.1 | 21/09/2026 | Equipe DayGrid | Criação a partir da ERS v0.5 |
 
 ## 2. Visão geral
 
@@ -37,7 +37,7 @@ O navegador conversa com as rotas em JSON. O agendador verifica os lembretes a c
 
 ## 3. Decisões arquiteturais
 
-Cada decisão abaixo recebe um ID (`DA-NN`). Depois da BL-IMPL, mudar uma delas exige uma Solicitação de Mudança.
+Cada decisão abaixo recebe um ID (`DA-NN`). Como este documento está na BL-PROJ, mudar uma delas exige uma Solicitação de Mudança.
 
 | ID | Decisão | Justificativa | Requisitos |
 | --- | --- | --- | --- |
@@ -337,7 +337,7 @@ flask --app backend/run.py run             # um único processo (DA-07)
 
 ### 9.5 Configuração do Gmail
 
-O Gmail é o provedor de SMTP do projeto, decisão da equipe em 18/11/2026. Para usá-lo:
+O Gmail é o provedor de SMTP do projeto, decisão da equipe em 22/09/2026. Para usá-lo:
 
 1. Criar (ou escolher) uma conta Gmail só para o DayGrid, e não usar a conta pessoal de algum integrante.
 2. Ativar a verificação em duas etapas nessa conta. Sem ela, o Google não permite criar senhas de app.

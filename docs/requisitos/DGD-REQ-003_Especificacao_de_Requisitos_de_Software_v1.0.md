@@ -1,10 +1,17 @@
 # ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE (ERS): DayGrid
 
-Item de configuração DGD-REQ-003, versão 1.0, baseline BL-PROJ. Responsáveis: Renata Martins da Silva (Analista de Requisitos) e João Vitor Simonetti (Desenvolvedor full-stack, DBA e DevOps). Documentos de base: DGD-REQ-001 (Documento de Requisitos) v1.2, DGD-ARQ-001 (Arquitetura) v1.2 e DGD-BD-001 (Modelo de Dados) v1.2.
+| Campo | Valor |
+| --- | --- |
+| ID do IC | DGD-REQ-003 |
+| Título | Especificação de Requisitos de Software (ERS) |
+| Versão | 1.0 |
+| Baseline | BL-PROJ |
+| Responsáveis | Renata Martins da Silva (Analista de Requisitos) e João Vitor Simonetti (Desenvolvedor full-stack, DBA e DevOps) |
+| Documentos de base | DGD-REQ-001 (Documento de Requisitos) v1.2, DGD-ARQ-001 (Arquitetura) v1.2 e DGD-BD-001 (Modelo de Dados) v1.2 |
 
 | Data | Versão | Descrição | Responsável |
 | --- | --- | --- | --- |
-| 19/11/2026 | 1.0 | Criação no template da disciplina, a partir do Documento de Requisitos, da Arquitetura e do Modelo de Dados; aprovada pelo CCB (SM-003, ATA-005) e incluída na BL-PROJ | Renata Martins da Silva e João Vitor Simonetti |
+| 17/11/2026 | 1.0 | Criação no template da disciplina, a partir do Documento de Requisitos, da Arquitetura e do Modelo de Dados; aprovada pelo CCB (SM-003, ATA-005) e incluída na BL-PROJ | Renata Martins da Silva e João Vitor Simonetti |
 
 ## 1. Introdução
 

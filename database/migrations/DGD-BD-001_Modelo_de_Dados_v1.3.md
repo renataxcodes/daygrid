@@ -1,7 +1,5 @@
 # DGD-BD-001: Modelo de Dados do DayGrid
 
-Data: 19/11/2026
-
 ## 1. Identificação do documento
 
 O banco do DayGrid tem 9 tabelas em MySQL 8.0 (InnoDB, `utf8mb4`). Todas, menos `usuario`, ficam ligadas a um usuário, direta ou indiretamente, o que garante o isolamento do RNF04.
@@ -10,9 +8,10 @@ O banco do DayGrid tem 9 tabelas em MySQL 8.0 (InnoDB, `utf8mb4`). Todas, menos 
 | --- | --- |
 | ID do IC | DGD-BD-001 |
 | Título | Modelo de dados e scripts de migração |
-| Versão | 1.2 (aprovada, baseline BL-PROJ, alterada pelas SM-002 e SM-003) |
+| Versão | 1.3 (aprovada, baseline BL-PROJ, alterada pelas SM-002, SM-003 e SM-004) |
+| Data | 22/11/2026 |
 | Responsável | João Vitor Simonetti (DBA) |
-| Baseline | BL-IMPL (prevista para 24/11/2026) |
+| Baseline | BL-PROJ (criada em 03/11/2026) |
 | Local no repositório | `database/migrations/` |
 | Documentos de base | DGD-REQ-001 (Documento de Requisitos) v1.2 · DGD-ARQ-001 (Arquitetura) v1.2 |
 
@@ -20,13 +19,14 @@ O banco do DayGrid tem 9 tabelas em MySQL 8.0 (InnoDB, `utf8mb4`). Todas, menos 
 
 | Versão | Data | Autor | Descrição |
 | --- | --- | --- | --- |
-| 1.2 | 19/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a Arquitetura v1.2; sem mudança de conteúdo |
-| 1.1 | 18/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados (células vazias ficam em branco) e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
-| 1.0 | 18/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
-| 0.4 | 18/11/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4) |
-| 0.3 | 18/11/2026 | Equipe DayGrid | `tarefa.data_prevista` passa a ser NOT NULL; token de redefinição vale 15 minutos |
-| 0.2 | 18/11/2026 | Equipe DayGrid | Validade do token de redefinição (2 minutos) e regra de concluída na semana confirmada |
-| 0.1 | 18/11/2026 | Equipe DayGrid | Criação: 9 tabelas e script inicial |
+| 1.3 | 22/11/2026 | Equipe DayGrid | SM-004 (ATA-006): campo Baseline corrigido para BL-PROJ e local do script inicial corrigido para database/migrations/; sem mudança de conteúdo |
+| 1.2 | 17/11/2026 | Equipe DayGrid | SM-003 (ATA-005): referências atualizadas para o Documento de Requisitos (DGD-REQ-001) e a Arquitetura v1.2; sem mudança de conteúdo |
+| 1.1 | 10/11/2026 | Equipe DayGrid | SM-002 (ATA-004): travessões retirados (células vazias ficam em branco) e cabeçalho das tabelas padronizado; documentos de base atualizados; sem mudança de conteúdo |
+| 1.0 | 03/11/2026 | Equipe DayGrid | Aprovado pelo CCB (ATA-003, SM-001); entra na baseline BL-PROJ |
+| 0.4 | 20/10/2026 | Equipe DayGrid | Revisão de consistência: documentos de base atualizados (ERS v1.0, ARQ v0.4) |
+| 0.3 | 28/09/2026 | Equipe DayGrid | `tarefa.data_prevista` passa a ser NOT NULL; token de redefinição vale 15 minutos |
+| 0.2 | 25/09/2026 | Equipe DayGrid | Validade do token de redefinição (2 minutos) e regra de concluída na semana confirmada |
+| 0.1 | 23/09/2026 | Equipe DayGrid | Criação: 9 tabelas e script inicial |
 
 ## 2. Visão geral
 
@@ -266,11 +266,11 @@ As três etiquetas iniciais (Estudos, Trabalho e Pessoal) não são criadas pela
 
 ### 6.2 Script inicial (DDL)
 
-Arquivo `database/0001_esquema_inicial.sql`, para MySQL 8.0.16 ou superior (versão necessária para as restrições CHECK). O mesmo script está neste pacote, na pasta `04-banco-de-dados/`.
+Arquivo `database/migrations/0001_esquema_inicial.sql`, para MySQL 8.0.16 ou superior (versão necessária para as restrições CHECK).
 
 ```sql
 -- =====================================================================
--- DGD-BD-001 · Script inicial do banco do DayGrid · v0.3 · 18/11/2026
+-- DGD-BD-001 · Script inicial do banco do DayGrid · v0.3 · 28/09/2026
 -- MySQL 8.0.16 ou superior (CHECK constraints) · InnoDB · utf8mb4
 -- Colunas DATETIME guardam UTC e são preenchidas pela aplicação (DA-09).
 -- Colunas DATE guardam a data do calendário de Manaus.
@@ -441,6 +441,6 @@ CREATE TABLE relatorio_semanal (
 
 ## 7. Pendências
 
-Nenhuma pendência: todas foram respondidas pela equipe em 18/11/2026.
+Nenhuma pendência: todas foram respondidas pela equipe em 28/09/2026.
 
 Observação: excluir a conta do usuário não está no Documento de Requisitos. Se entrar no escopo, o serviço precisa excluir as tarefas antes das etiquetas, por causa da chave RESTRICT de `tarefa.etiqueta_id`.

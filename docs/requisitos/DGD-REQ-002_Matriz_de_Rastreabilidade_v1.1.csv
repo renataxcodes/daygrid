@@ -1,0 +1,34 @@
+﻿ID;Requisito;Módulo;Prioridade;Regras de negócio;Status;Componente (DGD-ARQ-001);Tabela (DGD-BD-001);Código (DGD-COD);Caso de teste (DGD-TST-001);Resultado do teste
+RF01;Cadastrar usuário (nome, e-mail e senha);M0: Usuários;Essencial;;Especificado;CMP-01, CMP-09;usuario, etiqueta;;CT-01, CT-02;Não executado
+RF02;Login com e-mail e senha;M0: Usuários;Essencial;;Especificado;CMP-01, CMP-09;usuario;;CT-03, CT-04;Não executado
+RF03;Encerrar sessão (logout);M0: Usuários;Essencial;;Especificado;CMP-01, CMP-09;Não se aplica (sessão);;CT-05;Não executado
+RF04;Redefinir senha por e-mail;M0: Usuários;Desejável;;Especificado;CMP-01, CMP-07, CMP-09;token_redefinicao, usuario;;CT-06, CT-07, CT-08;Não executado
+RF05;Criar tarefa;M1: Tarefas;Essencial;RN01, RN02, RN03;Especificado;CMP-02, CMP-09;tarefa;;CT-11, CT-12;Não executado
+RF06;Editar tarefa;M1: Tarefas;Essencial;;Especificado;CMP-02, CMP-09;tarefa;;CT-13;Não executado
+RF07;Excluir tarefa (com confirmação);M1: Tarefas;Essencial;;Especificado;CMP-02, CMP-09;tarefa (cascata: subtarefa, lembrete, remarcacao);;CT-14;Não executado
+RF08;Alterar status da tarefa;M1: Tarefas;Essencial;RN02;Especificado;CMP-02, CMP-09;tarefa;;CT-15;Não executado
+RF09;Gerenciar subtarefas;M1: Tarefas;Importante;RN05;Especificado;CMP-02, CMP-09;subtarefa;;CT-16;Não executado
+RF10;Exibir tarefas do dia por prioridade;M1: Tarefas;Essencial;RN03;Especificado;CMP-02, CMP-09;tarefa;;CT-17;Não executado
+RF11;Filtrar por status, prioridade e etiqueta;M1: Tarefas;Importante;RN01;Especificado;CMP-02, CMP-09;tarefa, etiqueta;;CT-18;Não executado
+RF12;Remarcar data prevista;M1: Tarefas;Importante;RN04;Especificado;CMP-02, CMP-09;tarefa, remarcacao;;CT-19;Não executado
+RF25;Gerenciar etiquetas do usuário;M1: Tarefas;Importante;RN01;Especificado;CMP-03, CMP-09;etiqueta, tarefa;;CT-20, CT-21, CT-22;Não executado
+RF13;Criar lembrete (vinculado ou independente);M2: Lembretes;Essencial;RN08;Especificado;CMP-04, CMP-09;lembrete;;CT-23;Não executado
+RF14;Definir recorrência do lembrete;M2: Lembretes;Importante;RN09;Especificado;CMP-04, CMP-09;lembrete;;CT-24, CT-27;Não executado
+RF15;Enviar lembrete por e-mail;M2: Lembretes;Essencial;RN08, RN09;Especificado;CMP-08, CMP-07;lembrete;;CT-25, CT-26, CT-29;Não executado
+RF16;Editar e excluir lembrete;M2: Lembretes;Essencial;;Especificado;CMP-04, CMP-09;lembrete;;CT-28;Não executado
+RF17;Criar meta com prazo;M3: Metas;Essencial;;Especificado;CMP-05, CMP-09;meta;;CT-30;Não executado
+RF18;Vincular e desvincular tarefas da meta;M3: Metas;Essencial;RN07;Especificado;CMP-05, CMP-09;tarefa (meta_id);;CT-31;Não executado
+RF19;Barra de progresso automática;M3: Metas;Essencial;RN05, RN06;Especificado;CMP-05, CMP-09;meta, tarefa;;CT-32;Não executado
+RF20;Editar e excluir meta;M3: Metas;Importante;;Especificado;CMP-05, CMP-09;meta, tarefa;;CT-33;Não executado
+RF21;Gerar relatório semanal no domingo;M4: Relatório;Essencial;RN10;Especificado;CMP-08, CMP-06;relatorio_semanal;;CT-34;Não executado
+RF22;Percentual de concluídas e adiadas;M4: Relatório;Essencial;RN04, RN05, RN10;Especificado;CMP-06, CMP-09;relatorio_semanal, tarefa, remarcacao;;CT-35, CT-36, CT-39;Não executado
+RF23;Dias mais produtivos;M4: Relatório;Importante;RN10;Especificado;CMP-06, CMP-09;relatorio_semanal, tarefa;;CT-37;Não executado
+RF24;Progresso das metas no relatório;M4: Relatório;Importante;RN06;Especificado;CMP-06, CMP-09;relatorio_semanal, meta;;CT-38;Não executado
+RNF01;Compatibilidade com Chrome, Firefox e Edge;Todos;Importante;;Especificado;CMP-09 (DA-01);Não se aplica;;CT-40;Não executado
+RNF02;Interface responsiva (desktop e celular);Todos;;;Especificado;CMP-09;Não se aplica;;CT-41;Não executado
+RNF03;Senhas armazenadas como hash;M0: Usuários;;;Especificado;CMP-01 (DA-05, DA-10);usuario (senha_hash);;CT-09;Não executado
+RNF04;Cada usuário acessa só os próprios dados;Todos;;;Especificado;Todos (DA-06);Todas (usuario_id);;CT-10;Não executado
+RNF05;Lembrete enviado em até 5 minutos;M2: Lembretes;;;Especificado;CMP-08 (DA-07);lembrete (ix_lembrete_envio);;CT-29;Não executado
+RNF06;Lista carregada em até 2 s com 100 tarefas;M1: Tarefas;;;Especificado;CMP-02 (índices no DGD-BD-001);tarefa (ix_tarefa_usuario_data, ix_tarefa_usuario_status);;CT-42;Não executado
+RNF07;Português do Brasil, dd/mm/aaaa, fuso de Manaus;Todos;;;Especificado;CMP-09 (DA-09);Todas (DATETIME em UTC);;CT-43;Não executado
+RNF08;Código versionado com testes no CI;Todos;;;Especificado;Todos (DA-03);Migrações versionadas;;CT-44;Não executado
