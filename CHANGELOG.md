@@ -19,7 +19,7 @@ problemas conhecidos e instruções de instalação (DGD-GER-001, seção 10.1).
 - **BL-PLAN** criada em 06/10/2026 (ATA-002): DGD-GER-001 v1.0 e DGD-GER-002 v1.0. Hoje: DGD-GER-001 v1.3, DGD-GER-002 v1.4 e DGD-GER-006 v1.0 (incluído pela SM-003)
 - **BL-REQ** criada em 06/10/2026 (ATA-002): DGD-REQ-001 v1.0 e DGD-REQ-002 v1.0. Hoje: DGD-REQ-001 v1.2 (agora Documento de Requisitos) e DGD-REQ-002 v1.1
 - **BL-PROJ** criada em 03/11/2026 (ATA-003, SM-001): DGD-ARQ-001 v1.0, DGD-BD-001 v1.0 e DGD-TST-001 v1.0. Hoje: os três na v1.3 e DGD-REQ-003 v1.0 (incluída pela SM-003)
-- Tags `BL-PLAN`, `BL-REQ` e `BL-PROJ` criadas no repositório `daygrid` em 06/10/2026 (BL-PLAN e BL-REQ) e 03/11/2026 (BL-PROJ)
+- Tags `BL-PLAN`, `BL-REQ` e `BL-PROJ` criadas no repositório `daygrid` em 06/10/2026 (BL-PLAN e BL-REQ) e 03/11/2026 (BL-PROJ), e publicadas no GitHub em 22/11/2026 (github.com/renataxcodes/daygrid)
 
 ### SMs
 - **SM-001** (29/10/2026, Renata Martins da Silva): criar a baseline BL-PROJ. Aprovada por unanimidade na ATA-003, em 03/11/2026, e implementada no mesmo dia (PGC e Lista de ICs na v1.1)
@@ -44,7 +44,7 @@ problemas conhecidos e instruções de instalação (DGD-GER-001, seção 10.1).
   - DGD-REL-001: este CHANGELOG (v0.9)
 
 ### SMs incluídas
-- SM-001 a SM-004 (só documentação; nenhuma muda requisitos, regras ou valores).
+- SM-001 a SM-004, issues #1 a #4 no GitHub (só documentação; nenhuma muda requisitos, regras ou valores).
 
 ---
 
@@ -57,7 +57,7 @@ problemas conhecidos e instruções de instalação (DGD-GER-001, seção 10.1).
   Documento de Requisitos, Matriz de Rastreabilidade, ERS, Arquitetura, Modelo de Dados e Plano de Testes
 
 ### SMs incluídas
-- SM-001 a SM-004
+- SM-001 a SM-004 (issues #1 a #4)
 
 ### Problemas conhecidos
 - O código (DGD-COD-001 e DGD-COD-002), a execução dos testes, a BL-IMPL e a auditoria funcional (FCA)

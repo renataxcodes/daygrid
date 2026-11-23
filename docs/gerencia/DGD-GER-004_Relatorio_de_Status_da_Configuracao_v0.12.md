@@ -57,9 +57,9 @@ Em 22/11/2026, três das cinco baselines estão criadas (BL-PLAN, BL-REQ e BL-PR
 
 | Baseline | Data prevista | Situação | Tag |
 | --- | --- | --- | --- |
-| BL-PLAN | 06/10/2026 | **Criada em 06/10/2026** (ATA-002): PGC v1.0 e Lista de ICs v1.0; PGC na v1.3 e Lista de ICs na v1.4 depois das SM-001 a SM-004; Plano de Projeto v1.0 incluído pela SM-003 | `BL-PLAN` criada no repositório local (commit c90d3c6); falta publicar no GitHub |
-| BL-REQ | 06/10/2026 | **Criada em 06/10/2026** (ATA-002): ERS v1.0 e Matriz de Rastreabilidade v1.0; a antiga ERS virou o Documento de Requisitos, hoje na v1.2 (SM-002 e SM-003); Matriz na v1.1 (SM-004) | `BL-REQ` criada no repositório local (commit dc350f2); falta publicar no GitHub |
-| BL-PROJ | 03/11/2026 | **Criada em 03/11/2026** (ATA-003, SM-001): Arquitetura v1.0, Modelo de Dados v1.0 e Plano de Testes v1.0; os três na v1.3 depois das SM-002 a SM-004; ERS (DGD-REQ-003) v1.0 incluída pela SM-003 | `BL-PROJ` criada no repositório local (commit d0dab18); falta publicar no GitHub |
+| BL-PLAN | 06/10/2026 | **Criada em 06/10/2026** (ATA-002): PGC v1.0 e Lista de ICs v1.0; PGC na v1.3 e Lista de ICs na v1.4 depois das SM-001 a SM-004; Plano de Projeto v1.0 incluído pela SM-003 | `BL-PLAN` criada no repositório local (commit c90d3c6) e publicada no GitHub em 22/11/2026 |
+| BL-REQ | 06/10/2026 | **Criada em 06/10/2026** (ATA-002): ERS v1.0 e Matriz de Rastreabilidade v1.0; a antiga ERS virou o Documento de Requisitos, hoje na v1.2 (SM-002 e SM-003); Matriz na v1.1 (SM-004) | `BL-REQ` criada no repositório local (commit dc350f2) e publicada no GitHub em 22/11/2026 |
+| BL-PROJ | 03/11/2026 | **Criada em 03/11/2026** (ATA-003, SM-001): Arquitetura v1.0, Modelo de Dados v1.0 e Plano de Testes v1.0; os três na v1.3 depois das SM-002 a SM-004; ERS (DGD-REQ-003) v1.0 incluída pela SM-003 | `BL-PROJ` criada no repositório local (commit d0dab18) e publicada no GitHub em 22/11/2026 |
 | BL-IMPL | Fase futura | Fica para a fase de implementação, depois da entrega: código (DGD-COD-001 e DGD-COD-002) e execução dos testes | Ainda não criada |
 | BL-REL | 22/11/2026 | Depende da auditoria física (PCA) | Ainda não criada |
 
@@ -123,7 +123,7 @@ As mudanças abaixo aconteceram entre 08/09/2026 e 22/11/2026. Elas estão lista
 
 | Baseline | Pendência | Responsável |
 | --- | --- | --- |
-| BL-PLAN, BL-REQ e BL-PROJ | Publicar o repositório `daygrid` no GitHub (com as tags) e proteger `main` | Hugo |
+| BL-REL | Proteger `main` no GitHub (o repositório e as tags já foram publicados em 22/11/2026) | Renata e Hugo |
 | BL-IMPL (fase futura) | Escrever o código do front-end e do back-end | João Vitor |
 | BL-IMPL (fase futura) | Criar a conta Gmail do projeto e a senha de app | João Vitor |
 | BL-IMPL (fase futura) | Executar os 44 casos de teste e a FCA | Iago e Renata |

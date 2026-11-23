@@ -38,10 +38,10 @@ Cada SM ocupa uma linha, da abertura ao fechamento. O texto completo da SM fica 
 
 | ID | Abertura | Solicitante | Descrição | ICs afetados | Prioridade | Decisão do CCB | Data da decisão | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SM-001 | 29/10/2026 | Renata Martins da Silva | Criar a baseline BL-PROJ, só de documentos técnicos (Arquitetura, Modelo de Dados e Plano de Testes) | DGD-GER-001 v1.0 → v1.1, DGD-GER-002 v1.0 → v1.1 | Média | Aprovada (ATA-003) | 03/11/2026 | Implementada |
-| SM-002 | 09/11/2026 | Renata Martins da Silva | Revisão editorial: retirar os travessões e padronizar a formatação dos documentos em baseline, sem mudar o conteúdo | DGD-GER-001 v1.1, DGD-GER-002 v1.1, DGD-REQ-001 v1.0, DGD-ARQ-001 v1.0, DGD-BD-001 v1.0, DGD-TST-001 v1.0 | Baixa | Aprovada (ATA-004) | 10/11/2026 | Implementada |
-| SM-003 | 17/11/2026 | Renata Martins da Silva | Adaptar os documentos aos templates da disciplina: Documento de Requisitos (DGD-REQ-001), nova ERS (DGD-REQ-003) e novo Plano de Projeto (DGD-GER-006) | DGD-REQ-001 1.1 → 1.2; DGD-GER-001 1.2 → 1.3; DGD-GER-002 1.2 → 1.3; DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 1.1 → 1.2; novos DGD-REQ-003 e DGD-GER-006 (1.0) | Média | Aprovada (ATA-005) | 17/11/2026 | Implementada |
-| SM-004 | 22/11/2026 | Renata Martins da Silva | Correções de consistência: travessão na Matriz, campo Baseline da Arquitetura, do Modelo de Dados e do Plano de Testes, e local do script inicial no Modelo de Dados | DGD-REQ-002 1.0 → 1.1; DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 1.2 → 1.3; DGD-GER-002 1.3 → 1.4 | Baixa | Aprovada (ATA-006) | 22/11/2026 | Implementada |
+| SM-001 (#1) | 29/10/2026 | Renata Martins da Silva | Criar a baseline BL-PROJ, só de documentos técnicos (Arquitetura, Modelo de Dados e Plano de Testes) | DGD-GER-001 v1.0 → v1.1, DGD-GER-002 v1.0 → v1.1 | Média | Aprovada (ATA-003) | 03/11/2026 | Implementada |
+| SM-002 (#2) | 09/11/2026 | Renata Martins da Silva | Revisão editorial: retirar os travessões e padronizar a formatação dos documentos em baseline, sem mudar o conteúdo | DGD-GER-001 v1.1, DGD-GER-002 v1.1, DGD-REQ-001 v1.0, DGD-ARQ-001 v1.0, DGD-BD-001 v1.0, DGD-TST-001 v1.0 | Baixa | Aprovada (ATA-004) | 10/11/2026 | Implementada |
+| SM-003 (#3) | 17/11/2026 | Renata Martins da Silva | Adaptar os documentos aos templates da disciplina: Documento de Requisitos (DGD-REQ-001), nova ERS (DGD-REQ-003) e novo Plano de Projeto (DGD-GER-006) | DGD-REQ-001 1.1 → 1.2; DGD-GER-001 1.2 → 1.3; DGD-GER-002 1.2 → 1.3; DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 1.1 → 1.2; novos DGD-REQ-003 e DGD-GER-006 (1.0) | Média | Aprovada (ATA-005) | 17/11/2026 | Implementada |
+| SM-004 (#4) | 22/11/2026 | Renata Martins da Silva | Correções de consistência: travessão na Matriz, campo Baseline da Arquitetura, do Modelo de Dados e do Plano de Testes, e local do script inicial no Modelo de Dados | DGD-REQ-002 1.0 → 1.1; DGD-ARQ-001, DGD-BD-001 e DGD-TST-001 1.2 → 1.3; DGD-GER-002 1.3 → 1.4 | Baixa | Aprovada (ATA-006) | 22/11/2026 | Implementada |
 
 Status possíveis (PGC, seção 8.2): Aberta → Em análise → Aprovada ou Rejeitada → Implementada → Verificada → Fechada. Uma SM também pode ser Adiada pelo CCB.
 
@@ -258,10 +258,11 @@ As duas baselines foram aprovadas em 06/10/2026, na data prevista no PGC.
 
 Encaminhamentos:
 
-- [x] Criar as tags `BL-PLAN` e `BL-REQ` em `main` (PGC, seção 6.4): criadas no repositório local `daygrid` em 06/10/2026; falta publicar no GitHub
+- [x] Criar as tags `BL-PLAN` e `BL-REQ` em `main` (PGC, seção 6.4): criadas no repositório local `daygrid` em 06/10/2026 e publicadas no GitHub em 22/11/2026
 - [x] Exportar os quatro documentos aprovados para `docs/gerencia/` e `docs/requisitos/`: feito no repositório local `daygrid`
 - [x] Confirmar a lista de presentes desta ata
-- [ ] Publicar o repositório `daygrid` no GitHub, com as tags, e proteger `main`
+- [x] Publicar o repositório `daygrid` no GitHub, com as tags: publicado em 22/11/2026 (github.com/renataxcodes/daygrid)
+- [ ] Proteger `main` no GitHub: no fechamento da BL-REL
 
 ### ATA-003, 03/11/2026
 
@@ -282,7 +283,7 @@ Encaminhamentos:
 - [x] Atualizar o PGC (seção 7) e a Lista de ICs para a v1.1
 - [x] Passar Arquitetura, Modelo de Dados e Plano de Testes para a v1.0
 - [x] Criar a tag `BL-PROJ` em `main` (commit d0dab18) e copiar os documentos aprovados para os locais da Lista de ICs (`docs/arquitetura/`, `database/migrations/` e `tests/`): feito no repositório local `daygrid`
-- [ ] Publicar o repositório `daygrid` no GitHub, com as tags `BL-PLAN`, `BL-REQ` e `BL-PROJ`
+- [x] Publicar o repositório `daygrid` no GitHub, com as tags `BL-PLAN`, `BL-REQ` e `BL-PROJ`: publicado em 22/11/2026
 
 ### ATA-004, 10/11/2026
 
@@ -303,7 +304,7 @@ Encaminhamentos:
 - [x] Aceitar as sugestões da SM-002 nos cinco documentos
 - [x] Atualizar as versões e os históricos dos documentos e a Lista de ICs
 - [x] Gerar de novo os arquivos e fazer o commit no repositório local `daygrid`
-- [ ] Publicar o repositório `daygrid` no GitHub
+- [x] Publicar o repositório `daygrid` no GitHub: publicado em 22/11/2026
 
 ### ATA-005, 17/11/2026
 
@@ -345,4 +346,5 @@ Encaminhamentos:
 - [x] Aplicar as correções no Docs
 - [x] Gerar de novo os arquivos e fazer o commit no repositório `daygrid`
 - [x] Atualizar o CHANGELOG (DGD-REL-001)
-- [ ] Publicar o repositório `daygrid` no GitHub, com as tags
+- [x] Publicar o repositório `daygrid` no GitHub, com as tags: publicado em 22/11/2026
+- [x] Abrir as issues `CR` das SM-001 a SM-004 no GitHub (#1 a #4) e fechá-las, para a PCA-08
